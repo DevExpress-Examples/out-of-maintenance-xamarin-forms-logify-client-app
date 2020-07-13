@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<templates:CardBaseReportDetailView
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:templates="clr-namespace:Logify.Mobile.Views.ReportDetailTemplates"
+    xmlns:controls="clr-namespace:Logify.Mobile.Controls"
+    xmlns:vm="clr-namespace:Logify.Mobile.ViewModels.ReportDetail"
+    x:DataType="vm:SimpleListReportDetailInfoContainer"
+    x:Class="Logify.Mobile.Views.ReportDetailTemplates.SimpleListReportDetailView">
+    <templates:CardBaseReportDetailView.CardContent>
+        <controls:StackedScrollView 
+            Orientation="{Binding ScrollOrientation}"
+            VerticalOptions="FillAndExpand"
+            HorizontalScrollBarVisibility="Never"
+            VerticalScrollBarVisibility="Never"
+            PropertyChanged="Handle_PropertyChanged">
+            <Label
+                Style="{DynamicResource CardTextListStyle}"
+                LineBreakMode="WordWrap"
+                Margin="0,10"
+                Text="{Binding Values}"/>
+        </controls:StackedScrollView>
+    </templates:CardBaseReportDetailView.CardContent>
+</templates:CardBaseReportDetailView>

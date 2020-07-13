@@ -1,0 +1,58 @@
+﻿{
+    "rejection": {
+        "error": {
+            "message": "translateSFC is not defined",
+            "stack": "ReferenceError: translateSFC is not defined\n    at executeVueAndReact (https://js.TestMailClient.local/Demos/WidgetsGallery/JSDemos/demo-template.js:135:91)\n    at mainCode (https://js.TestMailClient.local/Demos/WidgetsGallery/JSDemos/demo-template.js:15:9)\n    at https://js.TestMailClient.local/Demos/WidgetsGallery/JSDemos/demo-template.js:165:9"
+        }
+    },
+    "logifyApp": {
+        "name": "demo-template.js",
+        "version": "",
+        "userId": ""
+    },
+    "browser": {
+        "appCodeName": "Mozilla",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36",
+        "appName": "Netscape",
+        "appVersion": "5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36",
+        "language": "zh-CN"
+    },
+    "os": {
+        "platform": "MacIntel"
+    },
+    "screen": {
+        "width": 1440,
+        "height": 900
+    },
+    "window": {
+        "width": 1010,
+        "height": 450
+    },
+    "siteData": {},
+    "libs": {},
+    "clientVersion": "15.2.11",
+    "devPlatform": "js",
+    "logifyProtocolVersion": "1.0",
+    "customData": {},
+    "scripts": [
+        "<script type=\"text/javascript\" src=\"https://logifyjs.TestMailClient.local/logifyAlert.min.js\"></script>",
+        "<script src=\"../Scripts/errorLogging.js\"></script>",
+        "<script src=\"https://unpkg.com/core-js@2.4.1/client/shim.min.js\"></script>",
+        "<script src=\"https://unpkg.com/systemjs@0.21.3/dist/system.js\"></script>",
+        "<script src=\"https://unpkg.com/typescript@3.4.5/lib/typescript.js\"></script>",
+        "<script src=\"js/jquery.min.js\"></script>",
+        "<script src=\"https://unpkg.com/systemjs-vue-browser@latest/index.js\"></script>",
+        "<script src=\"systemjs.config.vue.js\"></script>",
+        "<script src=\"demo-template.js\"></script>"
+    ],
+    "domState": {
+        "activeElementId": "",
+        "activeElementTagName": "BODY",
+        "activeElementScrollTop": 0,
+        "bodyScrollTop": 0,
+        "location": "https://js.TestMailClient.local/Demos/WidgetsGallery/JSDemos/demo-template.html#loggingEnabled",
+        "referrer": "https://js.TestMailClient.local/Demos/WidgetsGallery/Demo/TabPanel/Overview/Vue/Light/",
+        "readyState": "complete",
+        "isInsideIFrame": true
+    }
+}

@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:navigation="clr-namespace:DevExpress.XamarinForms.Navigation;assembly=DevExpress.XamarinForms.Navigation"
+             xmlns:templates="clr-namespace:Logify.Mobile.Views.ReportDetailTemplates"
+             xmlns:controls="clr-namespace:Logify.Mobile.Controls"
+             xmlns:converters="clr-namespace:Logify.Mobile.Services.Converters"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:editors="clr-namespace:DevExpress.XamarinForms.DemoEditors;assembly=DevExpress.XamarinForms.DemoEditors"
+             xmlns:vm="clr-namespace:Logify.Mobile.ViewModels.ReportDetail"
+             ios:Page.UseSafeArea="true"
+             BackgroundColor="{DynamicResource BackgroundThemeColor}"
+             x:DataType="vm:ReportDetailViewModel"
+             NavigationPage.BackButtonTitle=""             
+             x:Class="Logify.Mobile.Views.ReportDetailPage">
+    <NavigationPage.TitleView>
+        <Grid ColumnSpacing="0" RowSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition>
+                    <ColumnDefinition.Width>
+                        <OnPlatform x:TypeArguments="GridLength" Android="40" iOS="32"/>
+                    </ColumnDefinition.Width>
+                </ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <controls:PickerView
+                Grid.Column="0"
+                x:Name="picker"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"
+                FontFamily="{StaticResource BoldFont}"
+                FontAttributes="Bold"
+                FontSize="{DynamicResource NormalFontSize}"
+                BackgroundColor="{DynamicResource PickerBackgroudColor}"
+                BorderColor="{DynamicResource PickerBorderColor}"
+                Title="Report Status"
+                PositiveButtonText="OK"
+                PositiveButtonColor="{DynamicResource CardHeaderColor}"
+                NegativeButtonText="Cancel"
+                NegativeButtonColor="{DynamicResource CardExceptionMessageColor}"
+                ItemsSource="{Binding Statuses}"
+                SelectedItem="{Binding SelectedReportStatus, Mode=TwoWay}"
+                Margin="0"
+                IsVisible="false">
+
+                <controls:PickerView.Margin>
+                    <OnPlatform x:TypeArguments="Thickness" Android="0,5,6,8" iOS="0,4,4,4"/>
+                </controls:PickerView.Margin>
+
+            </controls:PickerView>
+
+            <editors:IconView Grid.Column="1"
+                               x:Name="rawButton"
+                               Margin="0,0,15,0"
+                               HorizontalOptions="End"
+                               VerticalOptions="Center"
+                               WidthRequest="24"
+                               HeightRequest="24"
+                               ForegroundColor="{DynamicResource TitleIconColor}"
+                               ImageSource="RawReport.svg">
+
+                <editors:IconView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OpenRawReportPage"/>
+                </editors:IconView.GestureRecognizers>
+
+            </editors:IconView>
+
+            <editors:IconView Grid.Column="2"
+                               x:Name="infoButton"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               WidthRequest="24"
+                               HeightRequest="24"
+                               ForegroundColor="{DynamicResource TitleIconColor}"
+                               ImageSource="Info.svg">
+
+                <editors:IconView.Margin>
+                    <OnPlatform x:TypeArguments="Thickness" Android="0,0,16,0" iOS="0"/>
+                </editors:IconView.Margin>
+
+                <editors:IconView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OpenDetailInfoPage"/>
+                </editors:IconView.GestureRecognizers>
+
+            </editors:IconView>
+        </Grid>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Resources>
+        <converters:BoolToObjectConverter x:Key="selectedIconConverter" FalseSource="Circle.svg" TrueSource="SelectedCircle.svg"/>
+
+        <DataTemplate x:Key="headerItemTemplate">
+            <editors:IconView 
+                WidthRequest="14" 
+                HeightRequest="14"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                ImageSource="{Binding IsSelected, Converter = {StaticResource selectedIconConverter}}"/>
+        </DataTemplate>
+
+        <templates:ReportDetailTemplateSelector
+            x:Key="reportDetailTemplateSelector"
+            KeyValueTemplate="{StaticResource keyValueTemplate}"
+            StackedTemplate="{StaticResource stackedTemplate}"
+            SimpleListTemplate="{StaticResource simpleListTemplate}"
+            CommentsTemplate="{StaticResource commentsTemplate}"
+            TabularTemplate="{StaticResource tabularTemplate}"/>
+
+    </ContentPage.Resources>
+
+    <AbsoluteLayout>
+
+        <ActivityIndicator
+            x:Name="activity"
+            AbsoluteLayout.LayoutBounds="0.5,0.5,0.15,0.15"
+            AbsoluteLayout.LayoutFlags="All"
+            IsRunning="True"
+            IsEnabled="True"
+            IsVisible="True"
+            Color="{DynamicResource CardHeaderColor}"
+            BackgroundColor="Transparent"/>
+
+        <controls:FloatingButtonContainer
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            x:Name="floatingButtonContainer"
+            MakePublicLinkTapped="MakePublicLink"
+            CopyLinkTapped="CopyLink"
+            ScrollWrapTapped="ScrollWrapInnerContent"
+            BeforeActionButtonsShow="BeforeShowButtonsMenu"
+            IsVisible="False">
+
+            <controls:FloatingButtonContainer.ContentLayer>
+                <Grid
+                    BackgroundColor="{DynamicResource SecondaryBackgroundColor}"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    Padding="10,20,10,0">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Label
+                        Grid.Row="0"
+                        Text="{Binding AppName}"
+                        FontSize="{DynamicResource  TitleFontSize}"
+                        FontFamily="{StaticResource BoldFont}"
+                        FontAttributes="Bold"
+                        Margin="5,0"/>
+
+                    <navigation:TabView
+                        Grid.Row="1"
+                        x:Name="tabControl"
+                        ItemsSource="{Binding Cards}"
+                        HeaderPanelHeight="32"
+                        HeaderPanelIndent="0"
+                        ItemHeaderWidth="*"
+                        ItemHeaderMinWidth="20"
+                        ItemHeaderMaxWidth="30"
+                        ItemHeaderTemplate="{StaticResource headerItemTemplate}"
+                        HeaderPanelContentAlignment="Start"
+                        ItemTemplate="{StaticResource reportDetailTemplateSelector}"
+                        IsHeaderPanelShadowVisible="False"
+                        IsSelectedItemIndicatorVisible="False"
+                        HeaderPanelBackgroundColor="Transparent"
+                        HeaderPanelPosition="Bottom"/>
+
+                </Grid>
+            </controls:FloatingButtonContainer.ContentLayer>
+        </controls:FloatingButtonContainer>
+    </AbsoluteLayout>
+</ContentPage>

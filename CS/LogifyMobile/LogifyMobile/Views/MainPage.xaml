@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<dxn:TabPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxn="clr-namespace:DevExpress.XamarinForms.Navigation;assembly=DevExpress.XamarinForms.Navigation"
+             xmlns:views="clr-namespace:Logify.Mobile.Views"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="Logify.Mobile.Views.MainPage"
+             BackgroundColor="{DynamicResource BackgroundThemeColor}"
+             ios:Page.UseSafeArea="true"
+             NavigationPage.HasNavigationBar="False"
+             HeaderPanelPosition="Bottom"
+             ItemHeaderPadding="0"
+             ItemHeaderWidth="*"
+             IsSelectedItemIndicatorVisible="False" SwipeEnabled="False"
+             HeaderPanelHeight="70" HeaderPanelMinHeight="0"
+             ItemHeaderVisibleElements="TextAndIcon"
+             ItemHeaderIconColor="Default"
+             ItemHeaderTextColor="{DynamicResource TabItemTextColor}"
+             HeaderPanelShadowColor="{DynamicResource HeaderPanelShadowColor}"
+             SelectedItemHeaderTextColor="{DynamicResource MenuAccentColor}"
+             SelectedItemHeaderIconColor="{DynamicResource MenuAccentColor}"
+             ScrollAnimationEnabled="False"
+             PropertyChanged="MainPage_PropertyChanged" PropertyChanging="MainPage_PropertyChanging">
+    <dxn:TabPageItem>
+        <views:DrawerReportsFilterView Icon="reports" Title="Reports"/>
+    </dxn:TabPageItem>
+    <dxn:TabPageItem>
+        <views:DrawerApplicationsDetailView Icon="apps" Title="Apps"/>
+    </dxn:TabPageItem>
+    <dxn:TabPageItem>
+        <views:StatisticView Icon="statistic" Title="Statistic"/>
+    </dxn:TabPageItem>
+    <dxn:TabPageItem>
+        <views:UserView Icon="user" Title="Account"/>
+    </dxn:TabPageItem>
+</dxn:TabPage>

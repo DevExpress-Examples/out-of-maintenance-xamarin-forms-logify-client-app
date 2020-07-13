@@ -1,0 +1,496 @@
+﻿{
+  "logifyProtocolVersion": "1.0.51",
+  "logifyReportDateTimeUtc": "2019-10-30T09:48:09.6591752Z",
+  "logifyApp": {
+    "name": "HotelBookingApp",
+    "version": "1.1.0",
+    "userId": ""
+  },
+  "devPlatform": "dotnet",
+  "platform": "WIN",
+  "app": {
+    "name": "HotelBookingApp",
+    "version": "1.0.0.0",
+    "architecture": "X86",
+    "is64bit": false,
+    "commandLine": "C:\\Users\\User\\source\\repos\\HotelBookingApp\\HotelBookingApp\\bin\\Debug\\HotelBookingApp.exe ",
+    "currentDomain": {
+      "friendlyName": "HotelBookingApp.exe",
+      "assemblies": [
+
+        {
+          "fullName": "mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "dynamic": false,
+          "gac": true,
+          "fullTrust": true,
+          "fileVersion": "4.7.3190.0 built by: NET472REL1LAST_C"
+        },
+
+        {
+          "fullName": "HotelBookingApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+          "dynamic": false,
+          "gac": false,
+          "fullTrust": true,
+          "fileVersion": "1.0.0.0"
+        },
+
+        {
+          "fullName": "Logify.Alert.Win, Version=1.0.51.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a",
+          "dynamic": false,
+          "gac": false,
+          "fullTrust": true,
+          "fileVersion": "1.0.51"
+        },
+
+        {
+          "fullName": "Logify.Alert.Core, Version=1.0.51.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a",
+          "dynamic": false,
+          "gac": false,
+          "fullTrust": true,
+          "fileVersion": "1.0.51"
+        },
+
+        {
+          "fullName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "dynamic": false,
+          "gac": true,
+          "fullTrust": true,
+          "fileVersion": "4.7.2558.0 built by: NET471REL1"
+        },
+
+        {
+          "fullName": "System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "dynamic": false,
+          "gac": true,
+          "fullTrust": true,
+          "fileVersion": "4.7.3190.0 built by: NET472REL1LAST_C"
+        },
+
+        {
+          "fullName": "System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
+          "dynamic": false,
+          "gac": true,
+          "fullTrust": true,
+          "fileVersion": "4.7.2558.0 built by: NET471REL1"
+        },
+
+        {
+          "fullName": "System.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
+          "dynamic": false,
+          "gac": true,
+          "fullTrust": true,
+          "fileVersion": "4.7.2558.0 built by: NET471REL1"
+        },
+
+        {
+          "fullName": "System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "dynamic": false,
+          "gac": true,
+          "fullTrust": true,
+          "fileVersion": "4.7.3190.0 built by: NET472REL1LAST_C"
+        },
+
+        {
+          "fullName": "System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "dynamic": false,
+          "gac": true,
+          "fullTrust": true,
+          "fileVersion": "4.7.2612.0 built by: NET471REL1LAST_B"
+        }
+      ]
+    }
+  },
+  "os": {
+    "platform": "Win32NT",
+    "servicePack": "",
+    "version": "6.2.9200.0",
+    "is64bit": true
+  },
+  "vm": {
+    "name": ""
+  },
+  "debugger": {
+    "isAttached": true
+  },
+  "memory": {
+    "workingSet": "22 Mb",
+    "ram": "16384 Mb",
+    "clrBytesInAllHeaps": "3,374,676",
+    "clrLargeObjectHeapSize": "2,582,272",
+    "clrGen0HeapSize": "6,291,456",
+    "clrGen1HeapSize": "792,392",
+    "clrGen2HeapSize": "12"
+  },
+  "display": {
+    "width": "1920",
+    "height": "1080",
+    "colorBits": "32",
+    "dpiX": "96",
+    "dpiY": "96"
+  },
+  "win32GuiResources": {
+    "gdiHandleCount": "23",
+    "userHandleCount": "16"
+  },
+  "currentCulture": {
+    "name": "en-US",
+    "englishName": "English (United States)",
+    "displayName": "English (United States)",
+    "isCultureCustomize": true,
+    "details": {
+      "numberFormat": {
+        "currency": {
+          "decimalDigits": 2,
+          "decimalSeparator": ".",
+          "groupSeparator": ",",
+          "groupSize": [
+            "3"
+          ],
+          "symbol": "$",
+          "negativePatternID": 0,
+          "positivePatternID": 0
+        },
+        "number": {
+          "decimalDigits": 2,
+          "decimalSeparator": ".",
+          "groupSeparator": ",",
+          "groupSize": [
+            "3"
+          ],
+          "negativePatternID": 1
+        },
+        "percent": {
+          "decimalDigits": 2,
+          "decimalSeparator": ".",
+          "groupSeparator": ",",
+          "groupSize": [
+            "3"
+          ],
+          "symbol": "%",
+          "negativePatternID": 0,
+          "positivePatternID": 0
+        },
+        "sign": {
+          "positive": "+",
+          "negative": "-"
+        },
+        "infinity": {
+          "positive": "Infinity",
+          "negative": "-Infinity"
+        },
+        "perMilleSymbol": "‰",
+        "NaNSymbol": "NaN",
+        "digitShapes": "None",
+        "nativeDigits": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ]
+      },
+      "dateTime": {
+        "dateSeparator": "/",
+        "timeSeparator": ":",
+        "firstDayOfWeek": "Sunday",
+        "am": "AM",
+        "pm": "PM",
+        "abbreviatedDayNames": [
+          "Sun",
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat"
+        ],
+        "abbreviatedMonthNames": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec",
+          ""
+        ],
+        "dayNames": [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "monthNames": [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+          ""
+        ],
+        "shortestDayNames": [
+          "Su",
+          "Mo",
+          "Tu",
+          "We",
+          "Th",
+          "Fr",
+          "Sa"
+        ],
+        "pattern": {
+          "shortTime": "h:mm tt",
+          "longTime": "h:mm:ss tt",
+          "shortDate": "M/d/yyyy",
+          "longDate": "dddd, MMMM d, yyyy",
+          "monthDay": "MMMM d",
+          "yearMonth": "MMMM yyyy",
+          "fullDateTime": "dddd, MMMM d, yyyy h:mm:ss tt",
+          "sortableDateTime": "yyyy'-'MM'-'dd'T'HH':'mm':'ss",
+          "universalSortableDateTime": "yyyy'-'MM'-'dd HH':'mm':'ss'Z'",
+          "RFC1123": "ddd, dd MMM yyyy HH':'mm':'ss 'GMT'"
+        }
+      },
+      "listSeparator": ",",
+      "isRightToLeft": false,
+      "ANSICodePage": 1252,
+      "EBCDICCodePage": 37,
+      "LCID": 1033,
+      "MacCodePage": 10000,
+      "OEMCodePage": 437,
+      "isNeutralCulture": false,
+      "ISO2": "en",
+      "ISO1": "eng",
+      "WinAPI": "ENU"
+    }
+  },
+  "currentUICulture": {
+    "name": "en-US",
+    "englishName": "English (United States)",
+    "displayName": "English (United States)",
+    "isCultureCustomize": true,
+    "details": {
+      "numberFormat": {
+        "currency": {
+          "decimalDigits": 2,
+          "decimalSeparator": ".",
+          "groupSeparator": ",",
+          "groupSize": [
+            "3"
+          ],
+          "symbol": "$",
+          "negativePatternID": 0,
+          "positivePatternID": 0
+        },
+        "number": {
+          "decimalDigits": 2,
+          "decimalSeparator": ".",
+          "groupSeparator": ",",
+          "groupSize": [
+            "3"
+          ],
+          "negativePatternID": 1
+        },
+        "percent": {
+          "decimalDigits": 2,
+          "decimalSeparator": ".",
+          "groupSeparator": ",",
+          "groupSize": [
+            "3"
+          ],
+          "symbol": "%",
+          "negativePatternID": 0,
+          "positivePatternID": 0
+        },
+        "sign": {
+          "positive": "+",
+          "negative": "-"
+        },
+        "infinity": {
+          "positive": "Infinity",
+          "negative": "-Infinity"
+        },
+        "perMilleSymbol": "‰",
+        "NaNSymbol": "NaN",
+        "digitShapes": "None",
+        "nativeDigits": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ]
+      },
+      "dateTime": {
+        "dateSeparator": "/",
+        "timeSeparator": ":",
+        "firstDayOfWeek": "Sunday",
+        "am": "AM",
+        "pm": "PM",
+        "abbreviatedDayNames": [
+          "Sun",
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat"
+        ],
+        "abbreviatedMonthNames": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec",
+          ""
+        ],
+        "dayNames": [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "monthNames": [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+          ""
+        ],
+        "shortestDayNames": [
+          "Su",
+          "Mo",
+          "Tu",
+          "We",
+          "Th",
+          "Fr",
+          "Sa"
+        ],
+        "pattern": {
+          "shortTime": "h:mm tt",
+          "longTime": "h:mm:ss tt",
+          "shortDate": "M/d/yyyy",
+          "longDate": "dddd, MMMM d, yyyy",
+          "monthDay": "MMMM d",
+          "yearMonth": "MMMM yyyy",
+          "fullDateTime": "dddd, MMMM d, yyyy h:mm:ss tt",
+          "sortableDateTime": "yyyy'-'MM'-'dd'T'HH':'mm':'ss",
+          "universalSortableDateTime": "yyyy'-'MM'-'dd HH':'mm':'ss'Z'",
+          "RFC1123": "ddd, dd MMM yyyy HH':'mm':'ss 'GMT'"
+        }
+      },
+      "listSeparator": ",",
+      "isRightToLeft": false,
+      "ANSICodePage": 1252,
+      "EBCDICCodePage": 37,
+      "LCID": 1033,
+      "MacCodePage": 10000,
+      "OEMCodePage": 437,
+      "isNeutralCulture": false,
+      "ISO2": "en",
+      "ISO1": "eng",
+      "WinAPI": "ENU"
+    }
+  },
+  "installedFrameworks": [
+
+    {
+      "version": "2.0.50727.4927",
+      "servicePack": "2"
+    },
+
+    {
+      "version": "3.0.30729.4926",
+      "servicePack": "2"
+    },
+
+    {
+      "version": "3.5.30729.4926",
+      "servicePack": "1"
+    },
+
+    {
+      "version": "4.7.02558",
+      "profile": "Client",
+      "release": "461310"
+    },
+
+    {
+      "version": "4.7.02558",
+      "profile": "Full",
+      "release": "461310"
+    },
+
+    {
+      "version": "4.0.0.0",
+      "profile": "Client"
+    }
+  ],
+  "exception": [
+
+    {
+      "type": "System.DivideByZeroException",
+      "message": "Attempted to divide by zero.",
+      "stackTrace": "   at HotelBookingApp.Form1.Form1_Load(Object sender, EventArgs e) in C:\\Users\\User\\source\\repos\\HotelBookingApp\\HotelBookingApp\\Form1.cs:line 24   at System.Windows.Forms.Form.OnLoad(EventArgs e)\r\n   at System.Windows.Forms.Form.OnCreateControl()\r\n   at System.Windows.Forms.Control.CreateControl(Boolean fIgnoreVisible)\r\n   at System.Windows.Forms.Control.CreateControl()\r\n   at System.Windows.Forms.Control.WmShowWindow(Message& m)\r\n   at System.Windows.Forms.Control.WndProc(Message& m)\r\n   at System.Windows.Forms.ScrollableControl.WndProc(Message& m)\r\n   at System.Windows.Forms.Form.WmShowWindow(Message& m)\r\n   at System.Windows.Forms.Form.WndProc(Message& m)\r\n   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)\r\n   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)\r\n   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)\r\n   at System.Windows.Forms.SafeNativeMethods.ShowWindow(HandleRef hWnd, Int32 nCmdShow)\r\n   at System.Windows.Forms.Control.SetVisibleCore(Boolean value)\r\n   at System.Windows.Forms.Form.SetVisibleCore(Boolean value)\r\n   at System.Windows.Forms.Control.set_Visible(Boolean value)\r\n   at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)\r\n   at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)\r\n   at System.Windows.Forms.Application.Run(Form mainForm)\r\n   at HotelBookingApp.Program.Main() in C:\\Users\\User\\source\\repos\\HotelBookingApp\\HotelBookingApp\\Program.cs:line 23\r\n",
+      "normalizedStackTrace": "HotelBookingApp.Form1.Form1_Load(Object sender, EventArgs e)\r\nSystem.Windows.Forms.Form.OnLoad(EventArgs e)\r\nSystem.Windows.Forms.Form.OnCreateControl()\r\nSystem.Windows.Forms.Control.CreateControl(Boolean fIgnoreVisible)\r\nSystem.Windows.Forms.Control.CreateControl()\r\nSystem.Windows.Forms.Control.WmShowWindow(Message& m)\r\nSystem.Windows.Forms.Control.WndProc(Message& m)\r\nSystem.Windows.Forms.ScrollableControl.WndProc(Message& m)\r\nSystem.Windows.Forms.Form.WmShowWindow(Message& m)\r\nSystem.Windows.Forms.Form.WndProc(Message& m)\r\nSystem.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)\r\nSystem.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)\r\nSystem.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)\r\nSystem.Windows.Forms.SafeNativeMethods.ShowWindow(HandleRef hWnd, Int32 nCmdShow)\r\nSystem.Windows.Forms.Control.SetVisibleCore(Boolean value)\r\nSystem.Windows.Forms.Form.SetVisibleCore(Boolean value)\r\nSystem.Windows.Forms.Control.set_Visible(Boolean value)\r\nSystem.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)\r\nSystem.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)\r\nSystem.Windows.Forms.Application.Run(Form mainForm)\r\nHotelBookingApp.Program.Main()\r\n"
+    }
+  ],
+  "breadcrumbs": [
+
+    {
+      "dateTime": "2019-10-30T09:48:07.4439461Z",
+      "message": "Form Load",
+      "methodName": "Form1_Load(object sender, EventArgs e)",
+      "line": 22
+    },
+
+    {
+      "dateTime": "2019-10-30T09:48:07.4289378Z",
+      "message": "Start App",
+      "methodName": "Main()",
+      "line": 20
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+﻿{
+  "AppName": "http://localhost:2101/default.aspx",
+  "Cards": [
+    {
+      "Type": 1,
+      "Values": [
+        {
+          "Header": "Exception",
+          "Stack": [ "System.Web.UI.Page.HandleError(Exception e)", "System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)", "System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)", "System.Web.UI.Page.ProcessRequest()", "System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)", "System.Web.UI.Page.ProcessRequest(HttpContext context)", "ASP.default_aspx.ProcessRequest(HttpContext context)[0]", "System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()", "System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)", "System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)", "System.EventHandler.Invoke(Object sender, EventArgs e)", "System.Web.HttpApplication.RaiseOnError()", "System.Web.HttpApplication.RecordError(Exception error)", "System.Web.HttpApplication.PipelineStepManager.ResumeSteps(Exception error)", "System.Web.HttpApplication.BeginProcessRequestNotification(HttpContext context, AsyncCallback cb)", "System.Web.HttpRuntime.ProcessRequestNotificationPrivate(IIS7WorkerRequest wr, HttpContext context)", "System.Web.Hosting.PipelineRuntime.ProcessRequestNotificationHelper(IntPtr rootedObjectsPointer, IntPtr nativeRequestContext, IntPtr moduleData, Int32 flags)", "System.Web.Hosting.PipelineRuntime.ProcessRequestNotification(IntPtr rootedObjectsPointer, IntPtr nativeRequestContext, IntPtr moduleData, Int32 flags)", "System.Web.Hosting.UnsafeIISMethods.MgdIndicateCompletion(IntPtr pHandler, RequestNotificationStatus& notificationStatus)", "System.Web.Hosting.PipelineRuntime.ProcessRequestNotificationHelper(IntPtr rootedObjectsPointer, IntPtr nativeRequestContext, IntPtr moduleData, Int32 flags)", "System.Web.Hosting.PipelineRuntime.ProcessRequestNotification(IntPtr rootedObjectsPointer, IntPtr nativeRequestContext, IntPtr moduleData, Int32 flags)", "System.Web.Hosting.UnsafeIISMethods.MgdIndicateCompletion(IntPtr pHandler, RequestNotificationStatus& notificationStatus)", "System.Web.Hosting.PipelineRuntime.ProcessRequestNotificationHelper(IntPtr rootedObjectsPointer, IntPtr nativeRequestContext, IntPtr moduleData, Int32 flags)", "System.Web.Hosting.PipelineRuntime.ProcessRequestNotification(IntPtr rootedObjectsPointer, IntPtr nativeRequestContext, IntPtr moduleData, Int32 flags)", "System.Web.Hosting.UnsafeIISMethods.MgdIndicateCompletion(IntPtr pHandler, RequestNotificationStatus& notificationStatus)", "System.Web.Hosting.PipelineRuntime.ProcessRequestNotificationHelper(IntPtr rootedObjectsPointer, IntPtr nativeRequestContext, IntPtr moduleData, Int32 flags)", "System.Web.Hosting.PipelineRuntime.ProcessRequestNotification(IntPtr rootedObjectsPointer, IntPtr nativeRequestContext, IntPtr moduleData, Int32 flags)" ],
+          "Type": "System.Web.HttpUnhandledException",
+          "Message": "Exception of type 'System.Web.HttpUnhandledException' was thrown."
+        },
+        {
+          "Header": "Inner Exception #1",
+          "Stack": [ "DevExpress.Web.Internal.BatchEditHelper.SafeExecuteAction(Action action, Object recordKey)", "DevExpress.Web.Internal.BatchEditHelper.SafeExecuteAction(Action`1 action, Object key)", "DevExpress.Web.Internal.BatchEditHelper.UpdateRecords()", "DevExpress.Web.Internal.BatchEditHelper.CommitTransaction()", "DevExpress.Web.Data.WebDataProxy.EndEdit()", "DevExpress.Web.ASPxGridBase.UpdateEdit()", "DevExpress.Web.ASPxGridBase.CBUpdateEdit(String[] args)", "DevExpress.Web.ASPxGridBase.DoCallBackPostBack(String eventArgument)", "DevExpress.Web.ASPxGridBase.TryDoCallBackPostBack(String eventArgument)", "DevExpress.Web.ASPxGridBase.RaisePostBackEvent(String eventArgument)", "DevExpress.Web.ASPxWebControl.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)", "System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)", "System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)", "System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)" ],
+          "Type": "System.NotSupportedException",
+          "Message": "Specified method is not supported."
+        }
+      ],
+      "Title": "Exceptions"
+    },
+    {
+      "Values": [
+        {
+          "Key": "Application",
+          "Value": "http://localhost:2101/default.aspx"
+        },
+        {
+          "Key": "Logify Application",
+          "Value": "MySamples"
+        },
+        {
+          "Key": "AppName",
+          "Value": "/default.aspx"
+        },
+        {
+          "Key": "AppImageName",
+          "Value": "/LM/W3SVC/2/ROOT-2-132156106261858374"
+        },
+        {
+          "Key": "DateTime",
+          "Value": "2019-10-15T10:57:28.1400000Z"
+        },
+        {
+          "Key": "Repeat Count",
+          "Value": "3"
+        },
+        {
+          "Key": "DevPlatform",
+          "Value": "dotnet"
+        },
+        {
+          "Key": "AppArchitecture",
+          "Value": "X86"
+        },
+        {
+          "Key": "AppIs64Bit",
+          "Value": "false"
+        },
+        {
+          "Key": "OS",
+          "Value": "Win10 (Win32NT)"
+        },
+        {
+          "Key": "OS Version",
+          "Value": "10.0.17763.0 "
+        },
+        {
+          "Key": "OS Is64Bit",
+          "Value": "true"
+        },
+        {
+          "Key": "Debugger",
+          "Value": "False"
+        },
+        {
+          "Key": "RAM",
+          "Value": "16384 Mb"
+        },
+        {
+          "Key": "WorkingSet",
+          "Value": "170 Mb"
+        }
+      ],
+      "Title": "General"
+    },
+    {
+      "Values": [
+        {
+          "Key": "ContentType",
+          "Value": "text/html"
+        },
+        {
+          "Key": "ContentEncoding",
+          "Value": "Unicode (UTF-8)"
+        },
+        {
+          "Key": "Charset",
+          "Value": "utf-8"
+        },
+        {
+          "Key": "Expires",
+          "Value": "0"
+        },
+        {
+          "Key": "ExpiresAbsolute",
+          "Value": "1/1/0001 12:00:00 AM"
+        },
+        {
+          "Key": "HeaderEncoding",
+          "Value": "Unicode (UTF-8)"
+        },
+        {
+          "Key": "Code",
+          "Value": "200"
+        },
+        {
+          "Key": "Description",
+          "Value": "OK"
+        },
+        {
+          "Key": "SubStatus",
+          "Value": "0"
+        },
+        {
+          "Key": "Server",
+          "Value": "Microsoft-IIS/10.0"
+        },
+        {
+          "Key": "Cache-Control",
+          "Value": "private"
+        },
+        {
+          "Key": "X-AspNet-Version",
+          "Value": "4.0.30319"
+        }
+      ],
+      "Title": "Response Info"
+    },
+    {
+      "Values": [
+        {
+          "Key": "HttpMethod",
+          "Value": "POST"
+        },
+        {
+          "Key": "IsAuthenticated",
+          "Value": "False"
+        },
+        {
+          "Key": "IsLocal",
+          "Value": "False"
+        },
+        {
+          "Key": "IsSecureConnection",
+          "Value": "False"
+        },
+        {
+          "Key": "TotalBytes",
+          "Value": "6338"
+        }
+      ],
+      "Title": "Request Info"
+    },
+    {
+      "Type": 4,
+      "CardValueType": "Cookies",
+      "Values": [
+        {
+          "Domain": "",
+          "Expires": "1/1/0001 12:00:00 AM",
+          "Name": "_ga",
+          "Value": "GA1.1.574755616.1506354259"
+        },
+        {
+          "Domain": "",
+          "Expires": "1/1/0001 12:00:00 AM",
+          "Name": "__lc.visitor_id.4103151",
+          "Value": "S1502210496.1d9a43c735"
+        },
+        {
+          "Domain": "",
+          "Expires": "1/1/0001 12:00:00 AM",
+          "Name": "lc_ssoundefined",
+          "Value": "1526230424341"
+        },
+        {
+          "Domain": "",
+          "Expires": "1/1/0001 12:00:00 AM",
+          "Name": "dxMsg",
+          "Value": "%5B%7B%22Id%22%3A%22cookie-info%22%2C%22Minimized%22%3Afalse%2C%22Processed%22%3Afalse%2C%22Expires%22%3A%222050-01-01T08%3A00%3A00Z%22%7D%5D"
+        },
+        {
+          "Domain": "",
+          "Expires": "1/1/0001 12:00:00 AM",
+          "Name": "IssuesListCardView",
+          "Value": "page1%257csize2"
+        },
+        {
+          "Domain": "",
+          "Expires": "1/1/0001 12:00:00 AM",
+          "Name": "DX_BS_MAINTENANCE_MODE",
+          "Value": "true"
+        },
+        {
+          "Domain": "",
+          "Expires": "1/1/0001 12:00:00 AM",
+          "Name": "IssuesListGrid",
+          "Value": "page1%7csize10%7cgroup1%7csort2%7cd2%7cd1%7chierarchy10%7c0%7c-1%7c1%7c-1%7c2%7c-1%7c3%7c-1%7c4%7c-1%7c5%7c-1%7c6%7c-1%7c7%7c-1%7c8%7c-1%7c9%7c-1%7cvisible10%7ct0%7ct1%7ct2%7ct3%7ct4%7ct5%7ct6%7ct7%7ct8%7ct9%7cwidth10%7ce%7ce%7ce%7ce%7ce%7ce%7c125px%7c125px%7c125px%7ce"
+        },
+        {
+          "Domain": "",
+          "Expires": "1/1/0001 12:00:00 AM",
+          "Name": "DXCurrentTheme",
+          "Value": "Office2010Black"
+        },
+        {
+          "Domain": "",
+          "Expires": "1/1/0001 12:00:00 AM",
+          "Name": "catState",
+          "Value": "%u3782%u200A%u0860%u4E10%uB60A%u6017%u7940%uCE20%u1728%u02A0%u4B03%u180D%u64AA%u0108%u09E0%u3080%uF601%uDA25%u3500%uDA60%u0300%u3420%u0A2B%0E%u8B90%u062F%u0222%AE%u51E2%u6066%u3E00%u5F4E%u0125%u92C7%u4584%u135C%uA912%u96A0%u03C0%u0884%u5400%u2C01%u1B56%u8004%uD97C%u5801%u1932%u800B%u2C79%u1441%uB89B%uB806%uA109%uAC9A%u8036%u802E%u8288%u3E09%uB422%u11A9%u85B5%uADAC%13%u1388%u2BB6%u8A27%uB78A%u1F80%u7C30%u5048%1C%uB500%u0100%u32B3%u18A2%u2E1D%u0808%u5867%u3E35%u2C05%uAEA1%uB1B9%uA594%u0D8A%uA3BA%uBA7B%u966F%uBFA0%u6610%u6151%u68AE%1B%uBC29%u73B5%u1997%u9483%u7873%u6B75%u3B6C%u5742%u4A8A%u40DB%uA657%u88DE%u4171%u74DC%uFD7B%u2140%u069C%u342E%u2D3D%u6344%u4B5B%u7E8E%uFC4F%u6240%u332A%u60D8%uED92%u82E4%uC618%u0988%0E%u2505%uC158%u5E72%u0450%00"
+        },
+        {
+          "Domain": "",
+          "Expires": "1/1/0001 12:00:00 AM",
+          "Name": "Culture",
+          "Value": "ru-RU"
+        },
+        {
+          "Domain": "",
+          "Expires": "1/1/0001 12:00:00 AM",
+          "Name": "lc_sso4103151",
+          "Value": "1570461363728"
+        },
+        {
+          "Domain": "",
+          "Expires": "1/1/0001 12:00:00 AM",
+          "Name": "ASP.NET_SessionId",
+          "Value": "gllsw01s1b3wpg51dtkhp3qz"
+        }
+      ],
+      "Title": "Cookies"
+    },
+    {
+      "Values": [
+        {
+          "Key": "APPL_MD_PATH",
+          "Value": "/LM/W3SVC/2/ROOT"
+        },
+        {
+          "Key": "APPL_PHYSICAL_PATH",
+          "Value": "C:\\\\Users\\\\User\\\\Desktop\\\\SalesViewer\\\\WebSite\\\\"
+        },
+        {
+          "Key": "CONTENT_LENGTH",
+          "Value": "6338"
+        },
+        {
+          "Key": "CONTENT_TYPE",
+          "Value": "application/x-www-form-urlencoded"
+        },
+        {
+          "Key": "GATEWAY_INTERFACE",
+          "Value": "CGI/1.1"
+        },
+        {
+          "Key": "HTTPS",
+          "Value": "off"
+        },
+        {
+          "Key": "INSTANCE_ID",
+          "Value": "2"
+        },
+        {
+          "Key": "INSTANCE_META_PATH",
+          "Value": "/LM/W3SVC/2"
+        },
+        {
+          "Key": "LOCAL_ADDR",
+          "Value": "::1"
+        },
+        {
+          "Key": "PATH_INFO",
+          "Value": "/default.aspx"
+        },
+        {
+          "Key": "PATH_TRANSLATED",
+          "Value": "C:\\\\Users\\\\User\\\\Desktop\\\\SalesViewer\\\\WebSite\\\\default.aspx"
+        },
+        {
+          "Key": "REMOTE_ADDR",
+          "Value": "::1"
+        },
+        {
+          "Key": "REMOTE_HOST",
+          "Value": "::1"
+        },
+        {
+          "Key": "REMOTE_PORT",
+          "Value": "63424"
+        },
+        {
+          "Key": "REQUEST_METHOD",
+          "Value": "POST"
+        },
+        {
+          "Key": "SCRIPT_NAME",
+          "Value": "/default.aspx"
+        },
+        {
+          "Key": "SERVER_NAME",
+          "Value": "localhost"
+        },
+        {
+          "Key": "SERVER_PORT",
+          "Value": "2101"
+        },
+        {
+          "Key": "SERVER_PORT_SECURE",
+          "Value": "0"
+        },
+        {
+          "Key": "SERVER_PROTOCOL",
+          "Value": "HTTP/1.1"
+        },
+        {
+          "Key": "SERVER_SOFTWARE",
+          "Value": "Microsoft-IIS/10.0"
+        },
+        {
+          "Key": "URL",
+          "Value": "/default.aspx"
+        }
+      ],
+      "Title": "Server Variables"
+    },
+    {
+      "Type": 2,
+      "Values": [ "OutputCache", "Session", "WindowsAuthentication", "FormsAuthentication", "DefaultAuthentication", "RoleManager", "UrlAuthorization", "FileAuthorization", "AnonymousIdentification", "Profile", "UrlMappingsModule", "ServiceModel-4.0", "UrlRoutingModule-4.0", "ScriptModule-4.0", "Logify.Alert.Web", "ASPxHttpHandlerModule", "__DynamicModule_Microsoft.WebTools.BrowserLink.Runtime.Tracing.PageInspectorHttpModule, Microsoft.WebTools.BrowserLink.Runtime, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a_fc1d037e-28b8-4327-a7be-57cad9e5c9be" ],
+      "Title": "Modules"
+    },
+    {
+      "Values": [
+        {
+          "Key": "TechType",
+          "Value": "dotnet"
+        }
+      ],
+      "Title": "Tags"
+    },
+    {
+      "Type": 3,
+      "Title": "Comments"
+    }
+  ]
+}

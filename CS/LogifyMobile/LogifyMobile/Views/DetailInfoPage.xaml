@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Logify.Mobile.Views.DetailInfoPage">
+    <ContentPage.Content>
+        <ScrollView Margin="16,0" VerticalScrollBarVisibility="Never">
+            <StackLayout Spacing="10">
+                <Label Text="REPORT STATUS" Style="{StaticResource InfoHeaderStyle}"/>
+                <Label Text="Once you’ve analyzed a crash report in detail, you can change its status as your business requirements dictate. 
+The following status options are available."  Style="{StaticResource InfoTextStyle}"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <ContentView Grid.Row="0" Grid.Column="0" Style="{DynamicResource InfoStatusStyle}">
+                        <Frame Style="{DynamicResource InfoStatusFrameStyle}" BackgroundColor="{DynamicResource ReportStatusActive}"/>
+                    </ContentView>
+                    <ContentView Grid.Row="1" Grid.Column="0" Style="{DynamicResource InfoStatusStyle}">
+                        <Frame Style="{DynamicResource InfoStatusFrameStyle}" BackgroundColor="{DynamicResource ReportStatusClosedInVersion}"/>
+                    </ContentView>
+                    <ContentView Grid.Row="2" Grid.Column="0" Style="{DynamicResource InfoStatusStyle}">
+                        <Frame Style="{DynamicResource InfoStatusFrameStyle}" BackgroundColor="{DynamicResource ReportStatusClosedOnce}"/>
+                    </ContentView>
+                    <ContentView Grid.Row="3" Grid.Column="0" Style="{DynamicResource InfoStatusStyle}">
+                        <Frame Style="{DynamicResource InfoStatusFrameStyle}" BackgroundColor="{DynamicResource ReportStatusIgnoredByRule}"/>
+                    </ContentView>
+                    <ContentView Grid.Row="4" Grid.Column="0" Style="{DynamicResource InfoStatusStyle}">
+                        <Frame Style="{DynamicResource InfoStatusFrameStyle}" BackgroundColor="{DynamicResource ReportStatusIgnoredOnce}"/>
+                    </ContentView>
+                    <ContentView Grid.Row="5" Grid.Column="0" Style="{DynamicResource InfoStatusStyle}">
+                        <Frame Style="{DynamicResource InfoStatusFrameStyle}" BackgroundColor="{DynamicResource ReportStatusIgnoredPermanently}"/>
+                    </ContentView>
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Style="{StaticResource InfoTextStyle}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Active" Style="{StaticResource InfoTextBoldStyle}"/>
+                                <Span Text=" - This report is new and requires your attention."/>
+                            </FormattedString> 
+                        </Label.FormattedText>
+                    </Label>
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Style="{StaticResource InfoTextStyle}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Closed in Version" Style="{StaticResource InfoTextBoldStyle}"/>
+                                <Span Text=" - This issue was fixed for a specific version of your app. If the same report occurs in other versions, the report is automatically updated to "/>
+                                <Span Text="Active." Style="{StaticResource InfoTextBoldStyle}"/>
+                            </FormattedString> 
+                        </Label.FormattedText>
+                    </Label>
+                    <Label
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Style="{StaticResource InfoTextStyle}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Closed Once" Style="{StaticResource InfoTextBoldStyle}"/>
+                                <Span Text=" - This issue was fixed. If the same issue occurs again, its status will change to "/>
+                                <Span Text="Active." Style="{StaticResource InfoTextBoldStyle}"/>
+                            </FormattedString> 
+                        </Label.FormattedText>
+                    </Label>
+                    <Label
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Style="{StaticResource InfoTextStyle}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Ignored by Rule" Style="{StaticResource InfoTextBoldStyle}"/>
+                                <Span Text=" - The report is automatically ignored because it meets predefined auto-ignore rules."/>
+                            </FormattedString> 
+                        </Label.FormattedText>
+                    </Label>
+                    <Label
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Style="{StaticResource InfoTextStyle}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Ignored Once" Style="{StaticResource InfoTextBoldStyle}"/>
+                                <Span Text=" - The report will be ignored once."/>
+                            </FormattedString> 
+                        </Label.FormattedText>
+                    </Label>
+                    <Label
+                        Grid.Row="5"
+                        Grid.Column="1"
+                        Style="{StaticResource InfoTextStyle}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Ignored Always" Style="{StaticResource InfoTextBoldStyle}"/>
+                                <Span Text=" - The report will be ignored permanently."/>
+                            </FormattedString> 
+                        </Label.FormattedText>
+                    </Label>
+                </Grid>
+                <Label Text="Learn more" Style="{StaticResource InfoHyperLinkStyle}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToURICommand}" CommandParameter="https://logify.devexpress.com/Alert/Documentation/ProcessReports/WorkWithReport/Statuses"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="AUTO-IGNORE" Style="{StaticResource InfoHeaderStyle}"/>
+                <Label
+                    Style="{StaticResource InfoTextStyle}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Use auto-ignore rules to automatically filter unusable crash reports. Existing reports that match specified filters are automatically updated and new reports that meet "/>
+                            <Span Text="Ignored by Rule" Style="{StaticResource InfoTextBoldStyle}"/>
+                            <Span Text=" are not saved. 
+The following ignore settings are available for each application registered within Logify."/>
+                        </FormattedString> 
+                    </Label.FormattedText>
+                </Label>
+                <Label
+                    Style="{StaticResource InfoTextStyle}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Auto Ignore" Style="{StaticResource InfoHyperLinkStyle}">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GoToAuthorizedURICommand}" CommandParameter="https://logify.devexpress.com/Alert/Settings/AutoIgnore"/>
+                                </Span.GestureRecognizers>
+                            </Span>
+                            <Span Text=" - Reject reports that match any predefined filter: known bots, 404 error, .local domain and localhost, reports without "/>
+                            <Span Text="My Code" Style="{StaticResource InfoHyperLinkStyle}">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GoToAuthorizedURICommand}" CommandParameter="https://logify.devexpress.com/Alert/Settings/MyCode"/>
+                                </Span.GestureRecognizers>
+                            </Span>
+                            <Span Text="."/>
+                        </FormattedString> 
+                    </Label.FormattedText>
+                </Label>
+                <Label
+                    Style="{StaticResource InfoTextStyle}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Custom Ignoring" Style="{StaticResource InfoHyperLinkStyle}">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GoToAuthorizedURICommand}" CommandParameter="https://logify.devexpress.com/Alert/Settings/AdvancedAutoIgnore"/>
+                                </Span.GestureRecognizers>
+                            </Span>
+                            <Span Text=" - Reject reports that match your custom criterion."/>
+                        </FormattedString> 
+                    </Label.FormattedText>
+                </Label>
+                <Label
+                    Style="{StaticResource InfoTextStyle}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Black List" Style="{StaticResource InfoHyperLinkStyle}">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GoToAuthorizedURICommand}" CommandParameter="https://logify.devexpress.com/Alert/Settings/BlackList"/>
+                                </Span.GestureRecognizers>
+                            </Span>
+                            <Span Text=" - Reject reports that contain specific words within their call stacks."/>
+                        </FormattedString> 
+                    </Label.FormattedText>
+                </Label>
+                <Label
+                    Style="{StaticResource InfoTextStyle}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Stack-Based Ignoring" Style="{StaticResource InfoHyperLinkStyle}">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GoToAuthorizedURICommand}" CommandParameter="https://logify.devexpress.com/Alert/Settings/StackAutoIgnore"/>
+                                </Span.GestureRecognizers>
+                            </Span>
+                            <Span Text=" - Reject reports related to exceptions that contain specific call stack lines. To specify rules based on this report exception, click "/>
+                            <Span Text="Create rule" Style="{StaticResource InfoTextBoldStyle}"/>
+                            <Span Text=" within the EXCEPTIONS section."/>
+                        </FormattedString> 
+                    </Label.FormattedText>
+                </Label>
+                <Label Text="Learn more"  Style="{StaticResource InfoHyperLinkStyle}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToURICommand}" CommandParameter="https://logify.devexpress.com/Alert/Documentation/RejectReports"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="OTHER OPTIONS" Style="{StaticResource InfoHeaderStyle}"/>
+                <Label
+                    Style="{StaticResource InfoTextStyle}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Favorites" Style="{StaticResource InfoTextBoldStyle}"/>
+                            <Span Text=" - You can add important data fields to your FAVORITES list. Favorites will displayed as a separate section on this page. By default, the FAVORITES section is empty and hidden. To add a data field to favorites, click the ellipsis icon to the right of the data field name and select "/>
+                            <Span Text="Add to favorites" Style="{StaticResource InfoTextBoldStyle}"/>
+                            <Span Text="."/>
+                        </FormattedString> 
+                    </Label.FormattedText>
+                </Label>
+                <Label
+                    Style="{StaticResource InfoTextStyle}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Tags" Style="{StaticResource InfoTextBoldStyle}"/>
+                            <Span Text=" - You can add items to the list of fields used during search operations, duplicate report detection and when specifying custom auto-ignore rules. To add a data field to Tags, click the ellipsis icon to the right of the data field name and select "/>
+                            <Span Text="Create a tag" Style="{StaticResource InfoTextBoldStyle}"/>
+                            <Span Text="."/>
+                        </FormattedString> 
+                    </Label.FormattedText>
+                </Label>
+                <Label
+                    Style="{StaticResource InfoTextStyle}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Unique values" Style="{StaticResource InfoTextBoldStyle}"/>
+                            <Span Text=" - To view all unique field values across duplicate reports, click the ellipsis icon to the right of the data field name and select "/>
+                            <Span Text="Show unique values" Style="{StaticResource InfoTextBoldStyle}"/>
+                            <Span Text="."/>
+                        </FormattedString> 
+                    </Label.FormattedText>
+                </Label>
+                <Label
+                    Style="{StaticResource InfoTextStyle}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Public link to a report" Style="{StaticResource InfoTextBoldStyle}"/>
+                            <Span Text=" - To generate a public link to this report, click the "/>
+                            <Span Text="Make public link" Style="{StaticResource InfoTextBoldStyle}"/>
+                            <Span Text=" button."/>
+                        </FormattedString> 
+                    </Label.FormattedText>
+                </Label>
+                <Label
+                    Style="{StaticResource InfoTextStyle}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Report in JSON format" Style="{StaticResource InfoTextBoldStyle}"/>
+                            <Span Text=" - To view this report in JSON format (as sent to Logify Alert), click "/>
+                            <Span Text="Raw report" Style="{StaticResource InfoTextBoldStyle}"/>
+                            <Span Text="."/>
+                        </FormattedString> 
+                    </Label.FormattedText>
+                </Label>
+                <Label
+                    Style="{StaticResource InfoTextStyle}"
+                    Margin="0,0,0,20">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Related issues" Style="{StaticResource InfoTextBoldStyle}"/>
+                            <Span Text=" - You can associate external links to issues/tickets/cards/messages created in your internal bug tracking system for individual report items."/>
+                        </FormattedString> 
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

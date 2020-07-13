@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:editors="clr-namespace:DevExpress.XamarinForms.DemoEditors;assembly=DevExpress.XamarinForms.DemoEditors"
+    ios:Page.UseSafeArea="true"
+    x:Class="Logify.Mobile.Views.UserView"
+    BackgroundColor="{DynamicResource BackgroundThemeColor}">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand"
+                    HorizontalOptions="Center"
+                    Margin="0,32.5,0,0">
+            <StackLayout>
+                    <editors:IconView
+                        ImageSource="logify_logo.svg"
+                        ForegroundColor="{DynamicResource MenuAccentColor}"
+                        HorizontalOptions="Center"
+                        WidthRequest="101.5"
+                        HeightRequest="22.5"/>
+                <StackLayout x:Name="pageStack">
+                    <editors:IconView
+                        x:Name="userAvatar"
+                        ImageSource="User.svg"
+                        ForegroundColor="{DynamicResource MenuAccentColor}"
+                        HorizontalOptions="Center"
+                        Margin="0,139,0,0"
+                        WidthRequest="126"
+                        HeightRequest="126"/>
+                
+                <StackLayout
+                    x:Name="logoutBlock"
+                    Margin="0,43.5,0,0"
+                    BackgroundColor="{DynamicResource BackgroundThemeColor}">
+                    <Label
+                        Text="{Binding UserName}"
+                        FontAttributes="Bold"
+                        FontSize="{DynamicResource TitleFontSize}"
+                        HorizontalOptions="Center"
+                        VerticalOptions="EndAndExpand" />
+                    <Button
+                        x:Name="logoutButton"
+                        CornerRadius="17"
+                        Text="Log Out"
+                        FontFamily="{StaticResource NormalFont}"
+                        FontSize="{DynamicResource NormalFontSize}"
+                        Clicked="LogOut_Tapped"
+                        BackgroundColor="{DynamicResource MenuAccentColor}"
+                        HorizontalOptions="Center"
+                        VerticalOptions="StartAndExpand"
+                        HeightRequest="34"
+                        TextColor="White"
+                        Margin="0,45,0,20"
+                        Padding="25,0,25,4"
+                        />
+                </StackLayout>
+                    </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

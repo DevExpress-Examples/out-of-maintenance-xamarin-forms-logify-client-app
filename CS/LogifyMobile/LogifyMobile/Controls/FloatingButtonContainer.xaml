@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<AbsoluteLayout xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:controls="clr-namespace:Logify.Mobile.Controls"
+                xmlns:editors="clr-namespace:DevExpress.XamarinForms.DemoEditors;assembly=DevExpress.XamarinForms.DemoEditors"
+                x:Class="Logify.Mobile.Controls.FloatingButtonContainer">
+    <AbsoluteLayout.Resources>
+        <ControlTemplate x:Key="ButtonTemplate">
+            <Grid Grid.Row="0"
+                  HeightRequest="38">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="38" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="38" />
+                </Grid.ColumnDefinitions>
+                <Frame Grid.Column="0"
+                       Grid.ColumnSpan="3"
+                       CornerRadius="19"
+                       HasShadow="False"
+                       BackgroundColor="{DynamicResource FloatingButtonsInfoBackGround}" />
+                <Label Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       Margin="22,0,0,2"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalTextAlignment="Center"
+                       Style="{StaticResource InfoTextStyle}"
+                       Text="{TemplateBinding BindingContext.Text}" />
+                <Frame Grid.Column="2"
+                       CornerRadius="19"
+                       HasShadow="False"
+                       BackgroundColor="{DynamicResource CardHeaderColor}" />
+                <editors:IconView Grid.Column="2"
+                                  ImageSource="{TemplateBinding BindingContext.Icon}"
+                                  WidthRequest="22"
+                                  HeightRequest="22"
+                                  VerticalOptions="Center"
+                                  HorizontalOptions="Center"
+                                  ForegroundColor="{DynamicResource FloatingButtonsInfoBackGround}" />
+            </Grid>
+        </ControlTemplate>
+    </AbsoluteLayout.Resources>
+    <ContentView AbsoluteLayout.LayoutBounds="0,0,1,1"
+                 AbsoluteLayout.LayoutFlags="All"
+                 x:Name="contentLayer" />
+    <ContentView AbsoluteLayout.LayoutBounds="0,0,1,1"
+                 AbsoluteLayout.LayoutFlags="All"
+                 IsVisible="false"
+                 BackgroundColor="{DynamicResource FloatingButtonContainerBackGround}"
+                 x:Name="buttonsLayer">
+        <ContentView.GestureRecognizers>
+            <TapGestureRecognizer Tapped="MainButtonClicked" />
+        </ContentView.GestureRecognizers>
+        <ContentView.Content>
+
+            <ContentView
+                HeightRequest="160"
+                WidthRequest="203"
+                VerticalOptions="End"
+                HorizontalOptions="End"
+                Margin="0,0,0,115">
+                <Grid
+                    x:Name="actionButtons"
+                    RowSpacing="24"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Start"
+                    Margin="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="38" />
+                        <RowDefinition Height="38" />
+                        <RowDefinition Height="38" />
+                    </Grid.RowDefinitions>
+                    <ContentView ControlTemplate="{StaticResource ButtonTemplate}"
+                                 x:Name="scrollWrapButton">
+                        <ContentView.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="RaiseScrollWrap" />
+                        </ContentView.GestureRecognizers>
+                        <ContentView.BindingContext>
+                            <controls:TextIconButtonModel Text="Wrap text"
+                                                          Icon="Scroll.svg" />
+                        </ContentView.BindingContext>
+                    </ContentView>
+                    <ContentView Grid.Row="1"
+                                 ControlTemplate="{StaticResource ButtonTemplate}">
+                        <ContentView.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="RaiseMakePublicLink" />
+                        </ContentView.GestureRecognizers>
+                        <ContentView.BindingContext>
+                            <controls:TextIconButtonModel Text="Make public link"
+                                                          Icon="PublicLink.svg" />
+                        </ContentView.BindingContext>
+                    </ContentView>
+                    <ContentView Grid.Row="2"
+                                 ControlTemplate="{StaticResource ButtonTemplate}">
+                        <ContentView.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="RaiseCopyLink" />
+                        </ContentView.GestureRecognizers>
+                        <ContentView.BindingContext>
+                            <controls:TextIconButtonModel Text="Copy link"
+                                                          Icon="CopyLink.svg" />
+                        </ContentView.BindingContext>
+                    </ContentView>
+                </Grid>
+            </ContentView>
+        </ContentView.Content>
+    </ContentView>
+    <ContentView AbsoluteLayout.LayoutBounds="1,1,-1,-1"
+                 AbsoluteLayout.LayoutFlags="PositionProportional"
+                 Margin="0,0,6,40"
+                 x:Name="mainButton"
+                 VerticalOptions="End"
+                 HorizontalOptions="End">
+        <Frame x:Name="mainButtonBackground"
+               CornerRadius="30"
+               HeightRequest="60"
+               WidthRequest="60"
+               Padding="0"
+               BackgroundColor="{DynamicResource CardHeaderColor}"
+               HasShadow="False">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="MainButtonClicked" />
+            </Frame.GestureRecognizers>
+            <Frame.Content>
+                <editors:IconView VerticalOptions="Center"
+                                  HorizontalOptions="Center"
+                                  WidthRequest="24"
+                                  HeightRequest="24"
+                                  ImageSource="ActionButton.svg"
+                                  ForegroundColor="{DynamicResource FloatingButtonsInfoBackGround}" />
+            </Frame.Content>
+        </Frame>
+    </ContentView>
+</AbsoluteLayout>

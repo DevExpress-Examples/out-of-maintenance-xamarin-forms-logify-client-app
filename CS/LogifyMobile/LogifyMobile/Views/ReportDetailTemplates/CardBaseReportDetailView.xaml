@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Logify.Mobile.Views.ReportDetailTemplates.CardBaseReportDetailView"
+             CompressedLayout.IsHeadless="True">
+    <ContentView.Content>
+        <AbsoluteLayout
+            Padding="5,0"
+            CompressedLayout.IsHeadless="True">
+            <Frame
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                Style="{DynamicResource CardFrameStyle}">
+                <Grid Margin="0,0,0,2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label
+                        Grid.Row="0"
+                        Text="{Binding CardHeader}"
+                        Style="{DynamicResource CardHeaderStyle}"/>
+                    <ContentView                        
+                        x:Name="cardContent"
+                        Margin="16,0"
+                        Grid.Row="1"
+                        CompressedLayout.IsHeadless="True"/>
+                </Grid>
+           </Frame>
+           <ContentView
+               AbsoluteLayout.LayoutBounds="1, 0, -1, -1"
+               AbsoluteLayout.LayoutFlags="PositionProportional"
+               x:Name="addedContent"/>
+       </AbsoluteLayout>
+    </ContentView.Content>
+</ContentView>

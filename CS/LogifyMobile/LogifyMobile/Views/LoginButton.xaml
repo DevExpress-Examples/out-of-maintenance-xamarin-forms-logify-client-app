@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<StackLayout
+    xmlns ="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:Logify.Mobile.ViewModels;assembly=LogifyMobile"
+    xmlns:editors="clr-namespace:DevExpress.XamarinForms.DemoEditors;assembly=DevExpress.XamarinForms.DemoEditors"
+    xmlns:controls="clr-namespace:Logify.Mobile.Controls;assembly=LogifyMobile"
+    x:Class="Logify.Mobile.Views.LoginButton"
+    Orientation="Vertical"
+    x:DataType="{x:Type vm:LoginButtonInfo}">
+    <StackLayout.Resources>
+        <Style
+            x:Key="ButtonStyleBase"
+            TargetType="editors:ContentButton">
+            <Setter
+                Property="Padding"
+                Value="0" />
+            <Setter
+                Property="VerticalOptions"
+                Value="StartAndExpand" />
+            <Setter
+                Property="HorizontalOptions"
+                Value="CenterAndExpand" />
+            <Setter
+                Property="WidthRequest"
+                Value="350" />
+        </Style>
+        <Style
+            x:Key="LoginTitlesStyle"
+            TargetType="Label">
+            <Setter
+                Property="FontSize"
+                Value="{DynamicResource TitleFontSize}" />
+            <Setter
+                Property="FontFamily"
+                Value="{StaticResource BoldFont}" />
+            <Setter
+                Property="FontAttributes"
+                Value="Bold" />
+            <Setter
+                Property="TextColor"
+                Value="{DynamicResource StatisticTabViewItemTextColor}" />
+        </Style>
+        <Style
+            x:Key="LoginDescriptionStyle"
+            TargetType="Label">
+            <Setter
+                Property="FontSize"
+                Value="{DynamicResource SmallFontSize}" />
+            <Setter
+                Property="FontFamily"
+                Value="{StaticResource NormalFont}" />
+            <Setter
+                Property="TextColor"
+                Value="{DynamicResource StatisticTabViewItemTextColor}" />
+            <Setter
+                Property="Margin"
+                Value="0" />
+        </Style>
+        <Style
+            x:Key="LoginButtonStyle-iOS"
+            TargetType="editors:ContentButton"
+            BasedOn="{StaticResource ButtonStyleBase}">
+            <Setter
+                Property="VisualStateManager.VisualStateGroups">
+                <Setter.Value>
+                    <VisualStateGroupList>
+                        <VisualStateGroup
+                            Name="ContentButton">
+                            <VisualState
+                                Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter
+                                        Property="BackgroundColor"
+                                        Value="Transparent" />
+                                    <Setter
+                                        Property="BorderColor"
+                                        Value="{DynamicResource StatisticTabViewItemTextColor}" />
+                                    <Setter
+                                        Property="BorderWidth"
+                                        Value="1" />
+                                    <Setter
+                                        Property="Opacity"
+                                        Value="0.6" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState
+                                Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter
+                                        Property="BackgroundColor"
+                                        Value="{DynamicResource MenuForegroundColor}" />
+                                    <Setter
+                                        Property="BorderColor"
+                                        Value="Transparent" />
+                                    <Setter
+                                        Property="BorderWidth"
+                                        Value="1" />
+                                    <Setter
+                                        Property="Opacity"
+                                        Value="1" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style
+            x:Key="LoginButtonStyle-Android"
+            TargetType="editors:ContentButton"
+            BasedOn="{StaticResource ButtonStyleBase}">
+            <Setter
+                Property="BackgroundColor"
+                Value="{DynamicResource MenuForegroundColor}" />
+        </Style>
+        <Style
+            x:Key="LoginButtonStyle"
+            TargetType="editors:ContentButton">
+            <Style.BasedOn>
+                <OnPlatform
+                    x:TypeArguments="Style">
+                    <On
+                        Platform="iOS"
+                        Value="{StaticResource LoginButtonStyle-iOS}" />
+                    <On
+                        Platform="Android"
+                        Value="{StaticResource LoginButtonStyle-Android}" />
+                </OnPlatform>
+            </Style.BasedOn>
+        </Style>
+    </StackLayout.Resources>
+    <Label
+        Text="{Binding Title}"
+        Style="{StaticResource LoginTitlesStyle}"
+        Margin="0"
+        HorizontalOptions="CenterAndExpand" />
+    
+    <editors:ContentButton
+        Style="{StaticResource LoginButtonStyle}"
+        HorizontalOptions="FillAndExpand"
+        Clicked="OnButtonClicked"
+    >
+        <controls:MenuButton
+            Text="{Binding ButtonText}"
+            ImageSource="{Binding ButtonIcon}"
+            ShowRightIcon="True"
+            BackgroundColor="Transparent" />
+        
+    </editors:ContentButton>
+    <Label
+        Style="{StaticResource LoginDescriptionStyle}"
+        Text="{Binding Description}"
+        HorizontalTextAlignment="Start"
+        HorizontalOptions="Fill">
+        
+    </Label>
+</StackLayout>

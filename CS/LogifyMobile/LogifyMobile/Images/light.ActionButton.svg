@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 46 46" style="enable-background:new 0 0 46 46;" xml:space="preserve">
+<g>
+	<path fill="#FFFFFF" d="M4,8v13h17V4H8C5.79,4,4,5.79,4,8z M9,9h7v7H9V9z"/>
+	<path fill="#FFFFFF" d="M38,4H25v17h17V8C42,5.79,40.21,4,38,4z M37,16h-7V9h7V16z"/>
+	<path fill="#FFFFFF" d="M25,42h13c2.21,0,4-1.79,4-4V25H25V42z M30,30h7v7h-7V30z"/>
+	<path fill="#FFFFFF" d="M4,38c0,2.21,1.79,4,4,4h13V25H4V38z M9,30h7v7H9V30z"/>
+</g>
+</svg>

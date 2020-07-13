@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Grid
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:editors="clr-namespace:DevExpress.XamarinForms.DemoEditors;assembly=DevExpress.XamarinForms.DemoEditors"
+    x:Class="Logify.Mobile.Views.ReportFilterStatus"
+    RowSpacing="0"
+    ColumnSpacing="0"
+    Padding="0"
+    HeightRequest="30">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="30"/>
+        <ColumnDefinition Width="Auto"/>
+    </Grid.ColumnDefinitions>
+    <Frame Grid.Column="0" Grid.ColumnSpan="2"
+            x:Name="backgroundFrame"
+            HasShadow="False"
+            CornerRadius="15"
+            Margin="0"
+            BackgroundColor="Transparent" BorderColor="{DynamicResource FiltersStatusItemBorderColor}"/>
+    <editors:IconView
+        Grid.Column="0"
+        x:Name="icon"
+        x:FieldModifier="private"
+        Margin="12,0,0,0"
+        HeightRequest="12"
+        WidthRequest="12"
+        ForegroundColor="{DynamicResource ReportStatusActive}"
+        ImageSource="SelectedCircle.svg"
+        VerticalOptions="Center" />
+    <Label
+        Grid.Column="1"
+        x:Name="label"
+        x:FieldModifier="private"
+        MaxLines="1"
+        LineBreakMode="TailTruncation"
+        Margin="0,0,12,0"
+        Text="Active"
+        Style="{DynamicResource FilterStatusStyle}"
+        TextColor="{DynamicResource FiltersTextSecondaryColor}"
+        VerticalOptions="Center" />
+    <Grid.GestureRecognizers>
+        <TapGestureRecognizer Tapped="Handle_TappedGesture" />
+    </Grid.GestureRecognizers>
+</Grid>
