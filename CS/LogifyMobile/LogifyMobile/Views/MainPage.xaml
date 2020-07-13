@@ -21,13 +21,13 @@
              ScrollAnimationEnabled="False"
              PropertyChanged="MainPage_PropertyChanged" PropertyChanging="MainPage_PropertyChanging">
     <dxn:TabPageItem>
-        <views:DrawerReportsFilterView Icon="reports" Title="Reports"/>
+        <views:DrawerReportListView Icon="reports" Title="Reports"/>
     </dxn:TabPageItem>
     <dxn:TabPageItem>
-        <views:DrawerApplicationsDetailView Icon="apps" Title="Apps"/>
+        <views:DrawerApplicationListView Icon="apps" Title="Apps"/>
     </dxn:TabPageItem>
     <dxn:TabPageItem>
-        <views:StatisticView Icon="statistic" Title="Statistic"/>
+        <views:StatisticsView Icon="statistics" Title="Statistics"/>
     </dxn:TabPageItem>
     <dxn:TabPageItem>
         <views:UserView Icon="user" Title="Account"/>

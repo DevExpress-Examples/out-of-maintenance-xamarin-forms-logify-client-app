@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<templates:TabularCardValueView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:templates="clr-namespace:Logify.Mobile.Views.ReportDetailsTemplates"
+    xmlns:converters="clr-namespace:Logify.Mobile.Services.Converters"
+    xmlns:vm="clr-namespace:Logify.Mobile.Models"
+    x:DataType="vm:AuditCard"
+    x:Class="Logify.Mobile.Views.ReportDetailsTemplates.AuditCardValueView">
+    <Grid.Resources>
+        <converters:TextBeforeStatusConverter x:Key="beforeStatusConverter" />
+        <converters:TextHasStatusConverter x:Key="textHasStatusConverter" />
+        <converters:ColorStatusConverter x:Key="colorStatusConverter" />
+        <converters:TextStatusNameConverter x:Key="textStatusNameConverter" />
+        <converters:ValueToFormattedStringConverter x:Key="valueToFormattedStringConverter" />
+    </Grid.Resources>
+    <Grid
+        Grid.Row="0"
+        RowSpacing="0"
+        ColumnSpacing="0"
+        Padding="0,8"
+        CompressedLayout.IsHeadless="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="0" VerticalTextAlignment="Start" VerticalOptions="StartAndExpand" Style="{DynamicResource CardAuditKeyStyle}" Text="Date/Time"/>
+        <Label Grid.Column="0" Grid.Row="1" VerticalTextAlignment="Start" VerticalOptions="StartAndExpand" Style="{DynamicResource CardAuditKeyStyle}" Text="Details"/>
+        <Label Grid.Column="0" Grid.Row="2" VerticalTextAlignment="Start" VerticalOptions="StartAndExpand" Style="{DynamicResource CardAuditKeyStyle}" Text="By"/>
+
+        <Label Grid.Column="1" Grid.Row="0" VerticalTextAlignment="Start" VerticalOptions="StartAndExpand"              
+               Style="{StaticResource CardAuditValueStyle}"
+               FormattedText="{Binding DateTime, Converter={StaticResource valueToFormattedStringConverter}}"/>
+        <Grid Grid.Column="1" Grid.Row="1" CompressedLayout.IsHeadless="True">
+            <FlexLayout
+                Direction="Row"
+                Wrap="Wrap"
+                MinimumHeightRequest="1"
+                FlowDirection="LeftToRight"
+                AlignContent="Start"
+                JustifyContent="Start"
+                AlignItems="Start"
+                Padding="0"
+                Margin="0"
+                VerticalOptions="FillAndExpand"
+                CompressedLayout.IsHeadless="True">
+                <Label
+                        FlexLayout.Shrink="1"
+                        Style="{DynamicResource CardAuditValueStyle}"
+                        Text="{Binding Text, Converter={StaticResource beforeStatusConverter}}"/>
+                <Label
+                        FlexLayout.Shrink="1"
+                        Style="{DynamicResource CardAuditStatusStyle}"
+                        IsVisible="{Binding Text, Converter={StaticResource textHasStatusConverter}}"
+                        Text="{Binding Text, Converter={StaticResource textStatusNameConverter}}"
+                        BackgroundColor="{Binding Text, Converter={StaticResource colorStatusConverter}}"/>
+            </FlexLayout>
+        </Grid>
+        <Label Grid.Column="1" Grid.Row="2" Text="{Binding UserName}" Style="{DynamicResource CardAuditValueStyle}" VerticalTextAlignment="Start" VerticalOptions="StartAndExpand"/>
+    </Grid>
+</templates:TabularCardValueView>

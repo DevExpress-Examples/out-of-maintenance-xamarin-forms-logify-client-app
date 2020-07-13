@@ -38,7 +38,7 @@
 using Logify.Mobile.Models;
 using Newtonsoft.Json.Linq;
 
-namespace Logify.Mobile.ViewModels.ReportDetail {
+namespace Logify.Mobile.ViewModels.ReportDetails {
     public class KeyValueReportDetailInfoContainer : ReportDetailInfoContainerBase {
         public override CardType CardType => CardType.KeyValue;
         public List<KeyValueProperty> Values { get; private set; }

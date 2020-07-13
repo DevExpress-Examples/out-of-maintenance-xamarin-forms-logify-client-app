@@ -39,7 +39,7 @@
                 Value="Bold" />
             <Setter
                 Property="TextColor"
-                Value="{DynamicResource StatisticTabViewItemTextColor}" />
+                Value="{DynamicResource StatisticsTabViewItemTextColor}" />
         </Style>
         <Style
             x:Key="LoginDescriptionStyle"
@@ -52,7 +52,7 @@
                 Value="{StaticResource NormalFont}" />
             <Setter
                 Property="TextColor"
-                Value="{DynamicResource StatisticTabViewItemTextColor}" />
+                Value="{DynamicResource StatisticsTabViewItemTextColor}" />
             <Setter
                 Property="Margin"
                 Value="0" />
@@ -75,7 +75,7 @@
                                         Value="Transparent" />
                                     <Setter
                                         Property="BorderColor"
-                                        Value="{DynamicResource StatisticTabViewItemTextColor}" />
+                                        Value="{DynamicResource StatisticsTabViewItemTextColor}" />
                                     <Setter
                                         Property="BorderWidth"
                                         Value="1" />

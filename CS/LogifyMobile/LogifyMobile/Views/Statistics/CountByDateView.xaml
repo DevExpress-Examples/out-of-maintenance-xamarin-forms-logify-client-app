@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:Logify.Mobile.ViewModels.Statistics"
+    xmlns:sys="clr-namespace:System;assembly=netstandard"
+    xmlns:editors="clr-namespace:DevExpress.XamarinForms.DemoEditors;assembly=DevExpress.XamarinForms.DemoEditors"
+    mc:Ignorable="d"
+    Spacing="15"
+    Padding="20"
+    BackgroundColor="{DynamicResource StatisticsPageBackgroundColor}"
+    x:Class="Logify.Mobile.Views.Statistics.CountByDateView"
+    x:DataType="vm:CountByDateViewModel">
+    <StackLayout.BindingContext>
+        <vm:CountByDateViewModel />
+    </StackLayout.BindingContext>
+    <StackLayout.Resources>
+        <ResourceDictionary>
+            <Style x:Key="MainText" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource BoldFont}" />
+                <Setter Property="FontSize" Value="{DynamicResource NormalFontSize}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="{DynamicResource GridCellTextMainColor}" />
+            </Style>
+            <Style x:Key="SecondaryText" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource NormalFont}" />
+                <Setter Property="FontSize" Value="{DynamicResource NormalFontSize}" />
+                <Setter Property="TextColor" Value="{DynamicResource GridCellTextSecondaryColor}" />
+            </Style>
+        </ResourceDictionary>
+    </StackLayout.Resources>
+    <Label x:Name="descriptionLabel" Style="{StaticResource SecondaryText}" />
+    <StackLayout x:Name="innerStack" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <StackLayout>
+            <Label Text="Date Range:" VerticalOptions="End" Style="{StaticResource MainText}" />
+            <Grid ColumnSpacing="10" x:Name="dateGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition x:Name="fromeDateColumn" Width="46*"/>
+                    <ColumnDefinition x:Name="dividerColumn" Width="8*"/>
+                    <ColumnDefinition x:Name="toDateColumn" Width="46*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <editors:DateEdit
+                    Grid.Column="0"
+                    HorizontalOptions="FillAndExpand"
+                    HeightRequest="38"
+                    VerticalOptions="FillAndExpand"
+                    BackgroundColor="Transparent"
+                    BorderColor="{DynamicResource StatisticsDateEditBorderColor}"
+                    TextColor="{DynamicResource GridCellTextMainColor}"
+                    CornerRadius="0"
+                    Insets="8,4"
+                    x:Name="fromDate"
+                    MaximumDate="{Binding Source={x:Static sys:DateTime.Now}}"
+                    RightImage="calendar"
+                    DateSelected="Handle_FromDateSelected">
+                </editors:DateEdit>
+                <Label
+                    Grid.Column="1"
+                    x:Name="dateDivider"
+                    Text="–"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource MainText}" />
+                <editors:DateEdit
+                    Grid.Column="2"
+                    HorizontalOptions="FillAndExpand"
+                    HeightRequest="38"
+                    VerticalOptions="FillAndExpand"
+                    BackgroundColor="Transparent"
+                    BorderColor="{DynamicResource StatisticsDateEditBorderColor}"
+                    TextColor="{DynamicResource GridCellTextMainColor}"
+                    CornerRadius="0"
+                    Insets="8,4"                    
+                    x:Name="toDate"
+                    MaximumDate="{Binding Source={x:Static sys:DateTime.Now}}"
+                    RightImage="calendar"
+                    DateSelected="Handle_ToDateSelected">
+                </editors:DateEdit>
+            </Grid>
+        </StackLayout>
+        <Grid x:Name="chartGrid" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label x:Name="totalCountLabel" VerticalOptions="Start" Style="{StaticResource MainText}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Total count: " />
+                        <Span Text="{Binding TotalCount,Mode=OneWay}" TextColor="{DynamicResource CardHeaderColor}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </Grid>
+    </StackLayout>
+</StackLayout>

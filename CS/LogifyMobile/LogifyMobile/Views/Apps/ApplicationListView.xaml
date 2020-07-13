@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dxg="clr-namespace:DevExpress.XamarinForms.DataGrid;assembly=DevExpress.XamarinForms.Grid"
+    xmlns:vm="clr-namespace:Logify.Mobile.ViewModels"
+    xmlns:controls="clr-namespace:Logify.Mobile.Controls"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" xmlns:views="clr-namespace:Logify.Mobile.Views"
+    ios:Page.UseSafeArea="true"
+    BackgroundColor="{DynamicResource BackgroundThemeColor}"
+    mc:Ignorable="d"
+    x:DataType="vm:ApplicationListViewModel"
+    x:Class="Logify.Mobile.Views.ApplicationListView">    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="dxg:CellStyle">
+                <Setter Property="HorizontalLineThickness" Value="0" />
+                <Setter Property="BorderColor" Value="Transparent" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundThemeColor}" />
+                <Setter Property="SelectionColor" Value="{DynamicResource BackgroundThemeColor}" />
+            </Style>
+
+            <Style TargetType="dxg:DataGridView">
+                <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundThemeColor}" />
+                <Setter Property="IndicatorColor" Value="{DynamicResource CardHeaderColor}" />
+            </Style>
+
+            <Style TargetType="controls:PickerView">
+                <Setter Property="BorderColor" Value="{DynamicResource PickerBorderColor}" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource PickerBackgroudColor}" />
+                <Setter Property="PositiveButtonText" Value="OK" />
+                <Setter Property="PositiveButtonColor" Value="{DynamicResource CardHeaderColor}" />
+                <Setter Property="NegativeButtonText" Value="Cancel" />
+                <Setter Property="NegativeButtonColor" Value="{DynamicResource CardExceptionMessageColor}" />
+                <Setter Property="FontSize" Value="{DynamicResource NormalFontSize}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HeightRequest" Value="36" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <vm:ApplicationListViewModel />
+    </ContentPage.BindingContext>
+
+    <dxg:DataGridView
+        ItemsSource="{Binding Applications}"
+        IsLoadMoreEnabled="{Binding IsNotLoaded}"
+        LoadMoreCommand="{Binding RefreshCommand}"
+        SelectionMode="None"
+        IsPullToRefreshEnabled="True"
+        PullToRefreshCommand="{Binding RefreshCommand}"
+        Tap="Handle_Tap"
+        IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"
+        IsColumnHeaderVisible="False"
+        AllowCascadeTreeCreation="True">
+        <dxg:DataGridView.Columns>
+            <dxg:TemplateColumn IsReadOnly="True" AllowSort="False">
+                <dxg:TemplateColumn.DisplayTemplate>
+                    <DataTemplate x:DataType="dxg:CellData">
+                        <ContentView CompressedLayout.IsHeadless="True">
+                            <views:ApplicationListItem BindingContext="{Binding Item}"/>
+                        </ContentView>
+                    </DataTemplate>
+                </dxg:TemplateColumn.DisplayTemplate>
+            </dxg:TemplateColumn>
+        </dxg:DataGridView.Columns>
+    </dxg:DataGridView>
+</ContentPage>

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogifyMobile.Android", "Log
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogifyMobile.iOS", "LogifyMobile\LogifyMobile.iOS\LogifyMobile.iOS.csproj", "{48B192ED-C1E7-4B62-BA2A-9CDB2C2ABFA4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogifyMobile", "LogifyMobile\LogifyMobile\LogifyMobile.csproj", "{B18EA4C2-048B-4FEE-83D1-47A828DF3A9A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogifyMobile", "LogifyMobile\LogifyMobile\LogifyMobile.csproj", "{B18EA4C2-048B-4FEE-83D1-47A828DF3A9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

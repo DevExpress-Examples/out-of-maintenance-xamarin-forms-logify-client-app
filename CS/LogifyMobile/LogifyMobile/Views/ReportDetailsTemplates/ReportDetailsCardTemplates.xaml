@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:templates="clr-namespace:Logify.Mobile.Views.ReportDetailsTemplates"
+                    x:Class="Logify.Mobile.Views.ReportDetailsTemplates.ReportDetailsCardTemplates">
+    <DataTemplate x:Key="keyValueTemplate">
+        <templates:KeyValueView/>
+    </DataTemplate>
+    <DataTemplate x:Key="stackedTemplate">
+        <templates:StackedView/>
+    </DataTemplate>
+    <DataTemplate x:Key="simpleListTemplate">
+        <templates:SimpleListView/>
+    </DataTemplate>
+    <DataTemplate x:Key="commentsTemplate">
+        <templates:CommentView/>
+    </DataTemplate>
+    <DataTemplate x:Key="tabularTemplate">
+        <templates:TabularView/>
+    </DataTemplate>
+    <DataTemplate x:Key="breadcrumbsCardTemplate">
+        <templates:BreadcrumbsCardValueView/>
+    </DataTemplate>
+    <DataTemplate x:Key="auditCardTemplate">
+        <templates:AuditCardValueView/>
+    </DataTemplate>
+    <DataTemplate x:Key="inputCardTemplate">
+        <templates:InputCardValueView/>
+    </DataTemplate>
+    <DataTemplate x:Key="cookiesCardTemplate">
+        <templates:CookiesCardValueView/>
+    </DataTemplate>
+</ResourceDictionary>

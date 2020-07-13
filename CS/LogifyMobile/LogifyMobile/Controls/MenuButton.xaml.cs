@@ -72,8 +72,8 @@ namespace Logify.Mobile.Controls {
         }
 
         public bool ShowRightIcon {
-            get => rightIcon.IsVisible;
-            set => rightIcon.IsVisible = value;
+            get => this.rightIcon.IsVisible;
+            set => this.rightIcon.IsVisible = value;
         }
 
         void Handle_Tapped(object sender, EventArgs args) {

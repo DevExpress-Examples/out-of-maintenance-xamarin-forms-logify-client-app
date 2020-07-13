@@ -39,19 +39,19 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Logify.Mobile.Controls;
 using Logify.Mobile.Models;
-using Logify.Mobile.Services.ReportDetail;
+using Logify.Mobile.Services.ReportDetails;
 using Plugin.Clipboard;
 using Xamarin.Forms;
 
-namespace Logify.Mobile.ViewModels.ReportDetail {
-    public class ReportDetailViewModel : NotificationObject {
+namespace Logify.Mobile.ViewModels.ReportDetails {
+    public class ReportDetailsViewModel : NotificationObject {
         ReportViewModel reportViewModel;
         PickerViewItem selectedReportStatus;
         readonly List<ReportDetailInfoContainerBase> cards = new List<ReportDetailInfoContainerBase>() { };
         readonly List<PickerViewItem> statuses = new List<PickerViewItem>() { };
         string scrollWrapButtonText;
         bool hasScrollWrapContent = false;
-        IReportDetailDataProvider provider;
+        IReportDetailsDataProvider provider;
         public List<ReportDetailInfoContainerBase> Cards => cards;
         public List<PickerViewItem> Statuses => statuses;
         public string AppName { get { return reportViewModel.Report.ApplicationName; } }
@@ -66,13 +66,13 @@ namespace Logify.Mobile.ViewModels.ReportDetail {
             }
         }
 
-        public ReportDetailViewModel(ReportViewModel reportViewModel, IReportDetailDataProvider provider) {
+        public ReportDetailsViewModel(ReportViewModel reportViewModel, IReportDetailsDataProvider provider) {
             this.reportViewModel = reportViewModel;
             this.provider = provider;
             InitializeReportStatuses();
         }
         public void ChangeSelectedIndex(int index, bool select) {
-            if(IndexIsValid(index)) {
+            if (IndexIsValid(index)) {
                 Cards[index].IsSelected = select;
                 hasScrollWrapContent = Cards[index] is ScrolledContentDetailInfoContainer;
             }
@@ -97,7 +97,7 @@ namespace Logify.Mobile.ViewModels.ReportDetail {
             Task.Run(async () => {
                 string link = await provider.MakePublicLink(ApiKey, ReportId);
                 CrossClipboard.Current.SetText(link);
-            });            
+            });
         }
         public void CopyLink() {
             Task.Run(async () => {
@@ -116,13 +116,13 @@ namespace Logify.Mobile.ViewModels.ReportDetail {
                     Value = status
                 };
                 statuses.Add(currentItem);
-                if(reportViewModel.Report.Status == status) {
+                if (reportViewModel.Report.Status == status) {
                     selectedReportStatus = currentItem;
                 }
             }
         }
         void UpdateReportStatus() {
-            if(selectedReportStatus.Value is ReportStatus status && reportViewModel.Report.Status != status) {
+            if (selectedReportStatus.Value is ReportStatus status && reportViewModel.Report.Status != status) {
                 reportViewModel.UpdateStatus(status);
             }
         }

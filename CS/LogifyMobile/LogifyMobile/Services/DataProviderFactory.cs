@@ -37,10 +37,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using Logify.Mobile.Services.Applications;
-using Logify.Mobile.Services.ApplicationsDetail;
-using Logify.Mobile.Services.ReportDetail;
+using Logify.Mobile.Services.ApplicationDetails;
+using Logify.Mobile.Services.ReportDetails;
 using Logify.Mobile.Services.Reports;
-using Logify.Mobile.Services.Statistic;
+using Logify.Mobile.Services.Statistics;
 using Logify.Mobile.Services.Subscriptions;
 using Logify.Mobile.Services.Teams;
 
@@ -57,30 +57,30 @@ namespace Logify.Mobile.Services {
             return (TDataProvider)dataProvider;
         }
         
-        public static ISubscriptionsDataProvider CreateSubscriptionsDataProvider() {
-            return GetCachedDataProvider("subscriptions", LogifyDataModeContext.SelectedMode.GetSubscriptionsDataProvider);
+        public static ISubscriptionListDataProvider CreateSubscriptionListDataProvider() {
+            return GetCachedDataProvider("subscriptions", LogifyDataModeContext.SelectedMode.GetSubscriptionListDataProvider);
         }
-        public static IApplicationsDataProvider CreateApplicationsDataProvider() {
-            return GetCachedDataProvider("apps", LogifyDataModeContext.SelectedMode.GetApplicationsDataProvider);
-        }
-        
-        public static IApplicationsDetailDataProvider CreateApplicationsDetailDataProvider() {
-            return GetCachedDataProvider("appDetails", LogifyDataModeContext.SelectedMode.GetApplicationsDetailDataProvider);
-        }
-        public static IReportDetailDataProvider CreateReportDetailDataProvider() {
-            return GetCachedDataProvider("reportDetails", LogifyDataModeContext.SelectedMode.GetReportDetailDataProvider);
+        public static IApplicationListDataProvider CreateApplicationListDataProvider() {
+            return GetCachedDataProvider("apps", LogifyDataModeContext.SelectedMode.GetApplicationListDataProvider);
         }
         
-        public static IStatisticDataProvider CreateStatisticDataProvider() {
-            return GetCachedDataProvider("statistic", LogifyDataModeContext.SelectedMode.GetStatisticDataProvider);
+        public static IApplicationDetailsDataProvider CreateApplicationDetailsDataProvider() {
+            return GetCachedDataProvider("appDetails", LogifyDataModeContext.SelectedMode.GetApplicationDetailsDataProvider);
+        }
+        public static IReportDetailsDataProvider CreateReportDetailsDataProvider() {
+            return GetCachedDataProvider("reportDetails", LogifyDataModeContext.SelectedMode.GetReportDetailsDataProvider);
         }
         
-        public static ITeamsDataProvider CreateTeamsDataProvider() {
-            return GetCachedDataProvider("teams", LogifyDataModeContext.SelectedMode.GetTeamsDataProvider);
+        public static IStatisticsDataProvider CreateStatisticsDataProvider() {
+            return GetCachedDataProvider("statistics", LogifyDataModeContext.SelectedMode.GetStatisticsDataProvider);
         }
         
-        public static IReportsRepository CreateReportsDataProvider() {
-            return GetCachedDataProvider("reports",LogifyDataModeContext.SelectedMode.GetReportsDataProvider);
+        public static ITeamListDataProvider CreateTeamListDataProvider() {
+            return GetCachedDataProvider("teams", LogifyDataModeContext.SelectedMode.GetTeamListDataProvider);
+        }
+        
+        public static IReportRepository CreateReportListDataProvider() {
+            return GetCachedDataProvider("reports",LogifyDataModeContext.SelectedMode.GetReportListDataProvider);
         }
 
         internal static void ClearCache() {

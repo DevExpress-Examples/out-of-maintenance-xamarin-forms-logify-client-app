@@ -15,10 +15,10 @@
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="DevExpress.XamarinForms.Charts" Version="20.1.4"/>
-        <PackageReference Include="DevExpress.XamarinForms.Grid" Version="20.1.4"/>
-        <PackageReference Include="DevExpress.XamarinForms.DemoEditors" Version="20.1.4"/>
-        <PackageReference Include="DevExpress.XamarinForms.Navigation" Version="20.1.4"/>
+        <PackageReference Include="DevExpress.XamarinForms.Charts" Version="20.1.5"/>
+        <PackageReference Include="DevExpress.XamarinForms.Grid" Version="20.1.5"/>
+        <PackageReference Include="DevExpress.XamarinForms.DemoEditors" Version="20.1.5"/>
+        <PackageReference Include="DevExpress.XamarinForms.Navigation" Version="20.1.5"/>
         <PackageReference Include="SkiaSharp.Svg" Version="1.60.0"/>
         <PackageReference Include="SkiaSharp.Views.Forms" Version="1.68.1.1"/>
         <PackageReference Include="Newtonsoft.Json" Version="12.0.3"/>
@@ -31,8 +31,8 @@
         <EmbeddedResource Remove="Images\light.Right.svg"/>
         <EmbeddedResource Remove="Images\Back.svg"/>
         <EmbeddedResource Remove="Images\Back_Arrow.svg"/>
-        <None Remove="DemoDataProvider\MockData\ApplicationsDetailView.json"/>
-        <EmbeddedResource Include="DemoDataProvider\MockData\ApplicationsDetailView.json"/>
+        <None Remove="DemoDataProvider\MockData\ApplicationDetailsView.json"/>
+        <EmbeddedResource Include="DemoDataProvider\MockData\ApplicationDetailsView.json"/>
         <None Remove="DemoDataProvider\MockData\DemoAuditValues.json"/>
         <EmbeddedResource Include="DemoDataProvider\MockData\DemoAuditValues.json"/>
         <None Remove="DemoDataProvider\MockData\DemoCookiesValues.json"/>
@@ -151,34 +151,37 @@
         <Folder Include="Images\"/>
         <Folder Include="Services\Applications\"/>
         <Folder Include="Services\Converters\"/>
-        <Folder Include="Views\ReportDetailTemplates\"/>
+        <Folder Include="Views\ReportDetailsTemplates\"/>
         <Folder Include="ViewModels\ReportDetail\"/>
-        <Folder Include="Services\ReportDetail\"/>
+        <Folder Include="Services\ReportDetails\"/>
         <Folder Include="Services\Reports\"/>
-        <Folder Include="Services\ApplicationsDetail\"/>
-        <Folder Include="Views\ReportDetailTemplates\TabularCardValueTemplates\"/>
+        <Folder Include="Services\ApplicationDetails\"/>
+        <Folder Include="Views\ReportDetailsTemplates\TabularCardValueTemplates\"/>
         <Folder Include="Services\Subscriptions\"/>
         <Folder Include="Services\Teams\"/>
-        <Folder Include="Services\Statistic\"/>
-        <Folder Include="Models\Statistic\"/>
-        <Folder Include="Views\Statistic\"/>
-        <Folder Include="ViewModels\Statistic\"/>
-        <Folder Include="Views\Filters\"/>
+        <Folder Include="Services\Statistics\"/>
+        <Folder Include="Models\Statistics\"/>
+        <Folder Include="Views\Statistics\"/>
+        <Folder Include="ViewModels\Statistics\"/>
+        <Folder Include="Views\Reports\"/>
+        <Folder Include="Views\ReportDetails\"/>
+        <Folder Include="Views\Apps\"/>
+        <Folder Include="Views\AppDetails\"/>
     </ItemGroup>
     <ItemGroup>
-        <Compile Update="Views\ReportDetailTemplates\SimpleListReportDetailView.xaml.cs">
-            <DependentUpon>SimpleListReportDetailView.xaml</DependentUpon>
+        <Compile Update="Views\ReportDetailsTemplates\SimpleListView.xaml.cs">
+            <DependentUpon>SimpleListView.xaml</DependentUpon>
         </Compile>
         <Compile Update="Controls\PickerView.xaml.cs">
             <DependentUpon>PickerView.xaml</DependentUpon>
         </Compile>
-        <Compile Update="Views\ReportDetailTemplates\TabularCardValueTemplates\BreadcrumbsCardValueView.xaml.cs">
+        <Compile Update="Views\ReportDetailsTemplates\TabularCardValueTemplates\BreadcrumbsCardValueView.xaml.cs">
             <DependentUpon>BreadcrumbsCardValueView.xaml</DependentUpon>
         </Compile>
-        <Compile Update="Views\ReportDetailTemplates\TabularCardValueTemplates\InputCardValueView.xaml.cs">
+        <Compile Update="Views\ReportDetailsTemplates\TabularCardValueTemplates\InputCardValueView.xaml.cs">
             <DependentUpon>InputCardValueView.xaml</DependentUpon>
         </Compile>
-        <Compile Update="Views\ReportDetailTemplates\TabularCardValueTemplates\CookiesCardValueView.xaml.cs">
+        <Compile Update="Views\ReportDetailsTemplates\TabularCardValueTemplates\CookiesCardValueView.xaml.cs">
             <DependentUpon>CookiesCardValueView.xaml</DependentUpon>
         </Compile>
     </ItemGroup>

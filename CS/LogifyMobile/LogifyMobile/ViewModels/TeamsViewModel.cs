@@ -76,31 +76,24 @@ namespace Logify.Mobile.ViewModels {
 
         Task updateItemsTask;
         public Task UpdateItemsAsync() {
-            Console.WriteLine($"   --- start updateItemsAsync {this} ");
             if (updateItemsTask == null) {
                 lock (typeof(PickerViewModelBase)) {
-                    Console.WriteLine($"   ---  updateItemsAsync enter lock section {this} ");
                     if (updateItemsTask == null) {
-                        Console.WriteLine($"   ---   updateItemsAsync start loaditems {this} ");
                         updateItemsTask = LoadItems()
                             .ContinueWith(_ => {
-                                Console.WriteLine($"   ---  updateItemsAsync finish loaditems {this} ");
                                 Items = _.Result.ToPickerViewItems();
                                 if (items.Any() && SelectedItem == null) {
                                     SelectedItemId = (string)items.First().Value;
                                 }
-                                Console.WriteLine($"   ---  updateItemsAsync setSelected item {this} ");
                                 OnPropertyChanged(nameof(SelectedItem));
                                 OnPropertyChanged(nameof(IsMultiItems));
                                 OnItemsUpdated().Wait();
                                 updateItemsTask = null;
-                                Console.WriteLine($"   ---  updateItemsAsync = null {this} ");
                             });
                     }
                 }
 
             } else {
-                Console.WriteLine($"   ---  updateItemsAsync TASK EXISTS {this} ");
             }
             return updateItemsTask;
         }
@@ -129,7 +122,7 @@ namespace Logify.Mobile.ViewModels {
             set => settings.TeamId = value;
         }
 
-        protected override Task<IDictionary<string, string>> LoadItems() => DataProviderFactory.CreateTeamsDataProvider().GetTeams();
+        protected override Task<IDictionary<string, string>> LoadItems() => DataProviderFactory.CreateTeamListDataProvider().GetTeams();
 
         protected override Task OnItemsUpdated() {
             return Task.CompletedTask;

@@ -37,10 +37,10 @@
 ﻿using System;
 using Logify.Mobile.Models;
 using Logify.Mobile.Services.Applications;
-using Logify.Mobile.Services.ApplicationsDetail;
-using Logify.Mobile.Services.ReportDetail;
+using Logify.Mobile.Services.ApplicationDetails;
+using Logify.Mobile.Services.ReportDetails;
 using Logify.Mobile.Services.Reports;
-using Logify.Mobile.Services.Statistic;
+using Logify.Mobile.Services.Statistics;
 using Logify.Mobile.Services.Subscriptions;
 using Logify.Mobile.Services.Teams;
 using Logify.Mobile.ViewModels;
@@ -54,13 +54,12 @@ namespace Logify.Mobile.Services {
         void ProcessLogin(Action<ILogifyDataMode> onAuthenticated, Action<ILogifyDataMode> onCanceled);
         void ProcessLogout();
         UserInfo GetUserInfo();
-        IApplicationsDataProvider GetApplicationsDataProvider();
-        ITeamsDataProvider GetTeamsDataProvider();
-        IApplicationsDetailDataProvider GetApplicationsDetailDataProvider();
-        ISubscriptionsDataProvider GetSubscriptionsDataProvider();
-        IReportDetailDataProvider GetReportDetailDataProvider();
-        IReportsRepository GetReportsDataProvider();
-
-        IStatisticDataProvider GetStatisticDataProvider();
+        IApplicationListDataProvider GetApplicationListDataProvider();
+        ITeamListDataProvider GetTeamListDataProvider();
+        IApplicationDetailsDataProvider GetApplicationDetailsDataProvider();
+        ISubscriptionListDataProvider GetSubscriptionListDataProvider();
+        IReportDetailsDataProvider GetReportDetailsDataProvider();
+        IReportRepository GetReportListDataProvider();
+        IStatisticsDataProvider GetStatisticsDataProvider();
     }
 }

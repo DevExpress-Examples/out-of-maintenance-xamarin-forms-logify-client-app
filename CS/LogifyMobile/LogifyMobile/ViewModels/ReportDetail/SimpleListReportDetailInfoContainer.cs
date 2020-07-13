@@ -38,7 +38,7 @@
 using System.Collections.Generic;
 using Logify.Mobile.Models;
 
-namespace Logify.Mobile.ViewModels.ReportDetail {
+namespace Logify.Mobile.ViewModels.ReportDetails {
     public class SimpleListReportDetailInfoContainer : ScrolledContentDetailInfoContainer {
         public string Values { get; private set; }
         public override CardType CardType => CardType.SimpleList;

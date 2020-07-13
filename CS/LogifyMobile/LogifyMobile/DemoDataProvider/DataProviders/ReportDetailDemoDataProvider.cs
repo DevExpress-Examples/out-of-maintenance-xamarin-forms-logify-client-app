@@ -38,8 +38,8 @@
 using System.Threading.Tasks;
 using Logify.Mobile.Models;
 
-namespace Logify.Mobile.Services.ReportDetail {
-    public class ReportDetailDemoDataProvider : IReportDetailDataProvider {
+namespace Logify.Mobile.Services.ReportDetails {
+    public class ReportDetailsDemoDataProvider : IReportDetailsDataProvider {
         public Task<ExceptionReport> LoadReport(string apiKey, string reportId) {
             return MockData.GetObject<ExceptionReport>("Reports." + reportId);
         }

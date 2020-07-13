@@ -68,11 +68,11 @@
     <Color x:Key="PickerBorderColor">#e0e0e0</Color>
     <Color x:Key="PickerBackgroudColor">#ffffff</Color>
 
-    <Color x:Key="StatisticPageBackgroundColor">#ffffff</Color>
-    <Color x:Key="StatisticTabViewItemTextColor">#717171</Color>
-    <Color x:Key="StatisticTabViewItemSelectedColor">#548ed3</Color>
-    <Color x:Key="StatisticCrossHairColor">#B4B4B4</Color>
-    <Color x:Key="StatisticPieHintColor">#D8558ED4</Color>
-    <Color x:Key="StatisticUniqueHintColor">#AE6E6E6E</Color>
-    <Color x:Key="StatisticDateEditBorderColor">#e0e0e0</Color>
+    <Color x:Key="StatisticsPageBackgroundColor">#ffffff</Color>
+    <Color x:Key="StatisticsTabViewItemTextColor">#717171</Color>
+    <Color x:Key="StatisticsTabViewItemSelectedColor">#548ed3</Color>
+    <Color x:Key="StatisticsCrossHairColor">#B4B4B4</Color>
+    <Color x:Key="StatisticsPieHintColor">#D8558ED4</Color>
+    <Color x:Key="StatisticsUniqueHintColor">#AE6E6E6E</Color>
+    <Color x:Key="StatisticsDateEditBorderColor">#e0e0e0</Color>
 </ResourceDictionary>

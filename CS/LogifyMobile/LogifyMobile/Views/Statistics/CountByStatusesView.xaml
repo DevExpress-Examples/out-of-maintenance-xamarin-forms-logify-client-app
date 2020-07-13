@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      xmlns:dxc="clr-namespace:DevExpress.XamarinForms.Charts;assembly=DevExpress.XamarinForms.Charts"
+      xmlns:vm="clr-namespace:Logify.Mobile.ViewModels.Statistics"
+      RowSpacing="0" Padding="20"
+      BackgroundColor="{DynamicResource StatisticsPageBackgroundColor}"
+      x:Class="Logify.Mobile.Views.Statistics.CountByStatusesView"
+      x:DataType="vm:CountByStatusesViewModel">
+    <Grid.Resources>
+        <ResourceDictionary>
+            <Style x:Key="MainText" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource BoldFont}" />
+                <Setter Property="FontSize" Value="{DynamicResource NormalFontSize}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="{DynamicResource GridCellTextMainColor}" />
+            </Style>
+            <Style x:Key="SecondaryText" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource NormalFont}" />
+                <Setter Property="FontSize" Value="{DynamicResource NormalFontSize}" />
+                <Setter Property="TextColor" Value="{DynamicResource GridCellTextSecondaryColor}" />
+            </Style>
+            <dxc:TextStyle x:Key="legendTextStyle" Size="16"/>
+            <dxc:TextStyle x:Key="portraitHintTextStyle" Size="16"/>
+            <dxc:TextStyle x:Key="landscapeHintTextStyle" Size="10"/>
+            <dxc:LegendStyle x:Key="legendStyle" TextStyle="{StaticResource legendTextStyle}" Padding="0 0 10 0" IndentFromDiagram="0"/>
+            <dxc:TextStyle x:Key="portraitCenterTextStyle" Size="16"/>
+            <dxc:TextStyle x:Key="landscapeCenterTextStyle" Size="13"/>
+            <dxc:PieCenterTextLabelStyle x:Key="pieCenterTextLabelStyle" TextStyle="{StaticResource portraitCenterTextStyle}"/>
+            <dxc:PieSeriesHintOptions x:Key="pieSeriesHintOptions" PointTextPattern="{}{V} ({VP}%)" />
+            <dxc:PieHintStyle x:Key="pieHintStyle" BackgroundColor="{StaticResource StatisticsPieHintColor}" MarkerSize="{DynamicResource NormalFontSize}" TextStyle="{StaticResource portraitHintTextStyle}"/>
+        </ResourceDictionary>
+    </Grid.Resources>
+    <Grid.BindingContext>
+        <vm:CountByStatusesViewModel/>
+    </Grid.BindingContext>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Label Grid.Row="0" Style="{StaticResource SecondaryText}" Margin="0" Text="Distribution of all incoming reports by status." />
+    <dxc:PieChartView Grid.Row="1"
+                      x:Name="pieChartView"
+                      Margin="0,60,0,20">
+        <dxc:PieChartView.Hint>
+            <dxc:PieHint Style="{StaticResource pieHintStyle}" />
+        </dxc:PieChartView.Hint>
+        <dxc:PieChartView.ChartStyle>
+            <dxc:PieChartStyle x:Name="chartStyle" Palette="{Binding CurrentPallete}" Padding="0"/>
+        </dxc:PieChartView.ChartStyle>
+        <dxc:PieChartView.Legend>
+            <dxc:Legend x:Name="legend" Orientation="LeftToRight"
+                        HorizontalPosition="Left"
+                        VerticalPosition="TopOutside"
+                        Style="{StaticResource legendStyle}"/>
+        </dxc:PieChartView.Legend>
+        <dxc:PieChartView.Series>
+            <dxc:DonutSeries x:Name="series" HintOptions="{StaticResource pieSeriesHintOptions}">
+                <dxc:DonutSeries.CenterLabel>
+                    <dxc:PieCenterTextLabel x:Name="centerLabel" TextPattern="{}Total count&#x0a;{TV}"
+                                            Style="{StaticResource pieCenterTextLabelStyle}"
+                                            AutoSizeText="False">
+                    </dxc:PieCenterTextLabel>
+                </dxc:DonutSeries.CenterLabel>
+                <dxc:DonutSeries.Data>
+                    <dxc:PieSeriesDataAdapter DataSource="{Binding Data}" LabelDataMember="Name" ValueDataMember="Count" />
+                </dxc:DonutSeries.Data>
+            </dxc:DonutSeries>
+        </dxc:PieChartView.Series>
+    </dxc:PieChartView>
+</Grid>

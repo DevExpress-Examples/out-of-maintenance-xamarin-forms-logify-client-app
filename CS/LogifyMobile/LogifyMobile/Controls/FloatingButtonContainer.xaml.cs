@@ -47,7 +47,7 @@ namespace Logify.Mobile.Controls {
         public event EventHandler ScrollWrapTapped;
         public event EventHandler BeforeActionButtonsShow;
 
-        public View ContentLayer { get { return contentLayer.Content; } set { contentLayer.Content = value; } }
+        public View ContentLayer { get { return this.contentLayer.Content; } set { this.contentLayer.Content = value; } }
 
         public FloatingButtonContainer() {
             InitializeComponent();
@@ -58,12 +58,12 @@ namespace Logify.Mobile.Controls {
         }
 
         async void MainButtonClicked(object sender, EventArgs e) {
-            this.BeforeActionButtonsShow?.Invoke(this, e);
+            BeforeActionButtonsShow?.Invoke(this, e);
             await ToggleContainer(true);
         }
         async Task ToggleContainer(bool animate) {
-            int scaleFadeValue = opened ? 0 : 1;
-            if (!opened) {
+            int scaleFadeValue = this.opened ? 0 : 1;
+            if (!this.opened) {
                 this.buttonsLayer.IsVisible = true;
             }
             if (animate) {
@@ -75,8 +75,8 @@ namespace Logify.Mobile.Controls {
                 this.buttonsLayer.Opacity = scaleFadeValue;
                 this.actionButtons.Scale = scaleFadeValue;
             }
-            this.buttonsLayer.IsVisible &= !opened;
-            opened = !opened;
+            this.buttonsLayer.IsVisible &= !this.opened;
+            this.opened = !this.opened;
         }
         async void RaiseMakePublicLink(object sender, EventArgs e) {
             await ToggleContainer(true);
@@ -91,19 +91,19 @@ namespace Logify.Mobile.Controls {
             ScrollWrapTapped?.Invoke(this, e);
         }
         public void SetScrollWrapButtonText(string value) {
-            if (scrollWrapButton != null && scrollWrapButton.BindingContext is TextIconButtonModel scrollWrapButtonContext)
+            if (this.scrollWrapButton != null && this.scrollWrapButton.BindingContext is TextIconButtonModel scrollWrapButtonContext)
                 scrollWrapButtonContext.Text = value;
         }
         public void ToggleScrollWrapButton(bool visible) {
-            if (opened || scrollWrapButton.IsVisible == visible)
+            if (this.opened || this.scrollWrapButton.IsVisible == visible)
                 return;
-            scrollWrapButton.IsVisible = visible;
+            this.scrollWrapButton.IsVisible = visible;
         }
     }
 
     public class TextIconButtonModel : NotificationObject {
         string text;
-        public string Text { get => text; set { if (text != value) SetProperty(ref text, value); } }
+        public string Text { get => this.text; set { if (this.text != value) SetProperty(ref this.text, value); } }
         public string Icon { get; set; }
     }
 }

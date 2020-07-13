@@ -37,7 +37,7 @@
 ﻿using System.Collections.Generic;
 using Logify.Mobile.Models;
 
-namespace Logify.Mobile.ViewModels.ReportDetail {
+namespace Logify.Mobile.ViewModels.ReportDetails {
     public abstract class ReportDetailInfoContainerBase: NotificationObject {
         public abstract CardType CardType { get; }
         public string CardHeader { get; set; }

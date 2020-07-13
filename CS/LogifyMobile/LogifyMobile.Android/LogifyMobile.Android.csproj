@@ -52,10 +52,10 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.XamarinForms.Charts" Version="20.1.4" />
-    <PackageReference Include="DevExpress.XamarinForms.Grid" Version="20.1.4" />
-    <PackageReference Include="DevExpress.XamarinForms.DemoEditors" Version="20.1.4" />
-    <PackageReference Include="DevExpress.XamarinForms.Navigation" Version="20.1.4" />
+    <PackageReference Include="DevExpress.XamarinForms.Charts" Version="20.1.5" />
+    <PackageReference Include="DevExpress.XamarinForms.Grid" Version="20.1.5" />
+    <PackageReference Include="DevExpress.XamarinForms.DemoEditors" Version="20.1.5" />
+    <PackageReference Include="DevExpress.XamarinForms.Navigation" Version="20.1.5" />
     <PackageReference Include="Xamarin.Android.Support.Core.Utils" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.CustomTabs" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />
@@ -105,7 +105,7 @@
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable\statistic.xml">
+    <AndroidResource Include="Resources\drawable\statistics.xml">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>

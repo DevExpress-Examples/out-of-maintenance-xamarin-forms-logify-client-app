@@ -38,7 +38,7 @@
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace Logify.Mobile.ViewModels.ReportDetail {
+namespace Logify.Mobile.ViewModels.ReportDetails {
     public abstract class ScrolledContentDetailInfoContainer : ReportDetailInfoContainerBase {
         ScrollOrientation scrollOrientation;
         public ScrollOrientation ScrollOrientation {

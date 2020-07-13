@@ -39,10 +39,8 @@ using UIKit;
 
 namespace Logify.Mobile.iOS {
     [Register("AppDelegate")]
-    public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
-    {
-        public override bool FinishedLaunching(UIApplication app, NSDictionary options)
-        {
+    public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate {
+        public override bool FinishedLaunching(UIApplication app, NSDictionary options) {
             DevExpress.XamarinForms.Charts.Chart.Init();
             DevExpress.XamarinForms.Navigation.Navigation.Init();
             DevExpress.XamarinForms.DataGrid.DataGrid.Init();

@@ -44,13 +44,13 @@ namespace Logify.Mobile.Controls {
 			CompressedLayout.SetIsHeadless(this, true);
         }
         protected override void OnBindingContextChanged() {
-            if (!changingDataContext) {
-                if (this.BindingContext is CellData cellData) {
-                    changingDataContext = true;
-                    this.BindingContext = cellData.Item;
+            if (!this.changingDataContext) {
+                if (BindingContext is CellData cellData) {
+                    this.changingDataContext = true;
+                    BindingContext = cellData.Item;
                 }
             } else {
-                changingDataContext = false;
+                this.changingDataContext = false;
             }
             base.OnBindingContextChanged();
         }

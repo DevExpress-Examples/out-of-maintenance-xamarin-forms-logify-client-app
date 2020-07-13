@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<templates:TabularCardValueView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:templates="clr-namespace:Logify.Mobile.Views.ReportDetailsTemplates"
+    xmlns:vm="clr-namespace:Logify.Mobile.Models"
+    x:DataType="vm:BreadcrumbsCard"
+    x:Class="Logify.Mobile.Views.ReportDetailsTemplates.BreadcrumbsCardValueView">
+    <Grid
+        Grid.Row="0"
+        BackgroundColor="{DynamicResource GridCellBackgroundColor}"
+        RowSpacing="0"
+        CompressedLayout.IsHeadless="True"
+        Padding="0,8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource TabularCardKeyStyle}" Text="Timestamp" />
+        <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource TabularCardKeyStyle}" Text="Level" IsVisible="{Binding LevelVisible}"/>
+        <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource TabularCardKeyStyle}" Text="Thread" IsVisible="{Binding ThreadVisible}"/>
+        <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource TabularCardKeyStyle}" Text="Category" IsVisible="{Binding CategoryVisible}"/>
+        <Label Grid.Row="4" Grid.Column="0" Style="{StaticResource TabularCardKeyStyle}" Text="Event" IsVisible="{Binding EventVisible}"/>
+        <Label Grid.Row="5" Grid.Column="0" Style="{StaticResource TabularCardKeyStyle}" Text="Message" />
+
+        <Label Grid.Row="0" Grid.Column="1"
+               Style="{StaticResource TabularCardValueStyle}" Text="{Binding Timestamp}" />
+        <Label Grid.Row="1" Grid.Column="1"
+               IsVisible="{Binding LevelVisible}"
+               Style="{StaticResource TabularCardValueStyle}" Text="{Binding Level}" />
+        <Label Grid.Row="2" Grid.Column="1"
+               IsVisible="{Binding ThreadVisible}"
+               Style="{StaticResource TabularCardValueStyle}" Text="{Binding Thread}" />
+        <Label Grid.Row="3" Grid.Column="1"
+               IsVisible="{Binding CategoryVisible}"
+               Style="{StaticResource TabularCardValueStyle}" Text="{Binding Category}" />
+        <Label Grid.Row="4" Grid.Column="1"
+               IsVisible="{Binding EventVisible}"
+               Style="{StaticResource TabularCardValueStyle}" Text="{Binding Event}" />
+        <Label Grid.Row="5" Grid.Column="1"
+               Style="{StaticResource TabularCardValueStyle}" Text="{Binding Message}" />
+    </Grid>
+</templates:TabularCardValueView>

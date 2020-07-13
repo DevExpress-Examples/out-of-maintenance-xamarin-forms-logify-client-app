@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<templates:TabularCardValueView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:templates="clr-namespace:Logify.Mobile.Views.ReportDetailsTemplates"
+    xmlns:converters="clr-namespace:Logify.Mobile.Services.Converters"
+    xmlns:vm="clr-namespace:Logify.Mobile.Models"
+    x:DataType="vm:CookiesCard"
+    x:Class="Logify.Mobile.Views.ReportDetailsTemplates.CookiesCardValueView">
+    <Grid.Resources>
+        <converters:ValueToFormattedStringConverter x:Key="valueToFormattedStringConverter" />
+    </Grid.Resources>
+    <Grid
+        Grid.Row="0"
+        BackgroundColor="{DynamicResource GridCellBackgroundColor}"
+        RowSpacing="0"
+        Padding="0,8"
+        CompressedLayout.IsHeadless="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource TabularCardKeyStyle}" Text="Name" HorizontalOptions="Start" />
+        <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource TabularCardKeyStyle}" Text="Value" HorizontalOptions="Start" />
+        <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource TabularCardKeyStyle}" Text="Expires" HorizontalOptions="Start" IsVisible="{Binding ExpiresVisible}" />
+        <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource TabularCardKeyStyle}" Text="Secure" HorizontalOptions="Start" />
+        <Label Grid.Row="4" Grid.Column="0" Style="{StaticResource TabularCardKeyStyle}" Text="Domain" HorizontalOptions="Start" IsVisible="{Binding DomainVisible}"/>
+
+        <Label Grid.Row="0" Grid.Column="1" Style="{StaticResource TabularCardValueStyle}" Text="{Binding Name}" HorizontalOptions="Start" />
+        <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource TabularCardValueStyle}" Text="{Binding Value}" HorizontalOptions="Start" />
+        <Label Grid.Row="2" Grid.Column="1" Text="{Binding Expires, Converter={StaticResource valueToFormattedStringConverter}}" Style="{StaticResource TabularCardValueStyle}" HorizontalOptions="Start" IsVisible="{Binding ExpiresVisible}" />
+        <Label Grid.Row="3" Grid.Column="1" Style="{StaticResource TabularCardValueStyle}" Text="{Binding Secure}" HorizontalOptions="Start" />
+        <Label Grid.Row="4" Grid.Column="1" Style="{StaticResource TabularCardValueStyle}" Text="{Binding Domain}" HorizontalOptions="Start"  IsVisible="{Binding DomainVisible}" />
+    </Grid>
+</templates:TabularCardValueView>

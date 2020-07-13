@@ -37,10 +37,10 @@
 using System;
 using Logify.Mobile.Models;
 using Logify.Mobile.Services.Applications;
-using Logify.Mobile.Services.ApplicationsDetail;
-using Logify.Mobile.Services.ReportDetail;
+using Logify.Mobile.Services.ApplicationDetails;
+using Logify.Mobile.Services.ReportDetails;
 using Logify.Mobile.Services.Reports;
-using Logify.Mobile.Services.Statistic;
+using Logify.Mobile.Services.Statistics;
 using Logify.Mobile.Services.Subscriptions;
 using Logify.Mobile.Services.Teams;
 using Logify.Mobile.ViewModels;
@@ -66,18 +66,36 @@ namespace Logify.Mobile.Services {
             GlobalSettings.Instance.CleanStoredData();
         }
 
-        public UserInfo GetUserInfo() => new UserInfo("Demo User");
+        public UserInfo GetUserInfo() {
+            return new UserInfo("Demo User");
+        }
 
-        public IApplicationsDataProvider GetApplicationsDataProvider() => new ApplicationsDemoDataProvider();
-        public ITeamsDataProvider GetTeamsDataProvider() => new TeamsDemoDataProvider();
+        public IApplicationListDataProvider GetApplicationListDataProvider() {
+            return new ApplicationListDemoDataProvider();
+        }
 
-        public IApplicationsDetailDataProvider GetApplicationsDetailDataProvider() =>
-            new ApplicationsDetailDemoDataProvider();
+        public ITeamListDataProvider GetTeamListDataProvider() {
+            return new TeamListDemoDataProvider();
+        }
 
-        public ISubscriptionsDataProvider GetSubscriptionsDataProvider() => new SubscriptionsDemoDataProvider();
-        public IReportDetailDataProvider GetReportDetailDataProvider() => new ReportDetailDemoDataProvider();
-        public IReportsRepository GetReportsDataProvider() => new ReportsDemoRepository();
+        public IApplicationDetailsDataProvider GetApplicationDetailsDataProvider() {
+            return new ApplicationDetailsDemoDataProvider();
+        }
 
-        public IStatisticDataProvider GetStatisticDataProvider() => new StatisticDemoDataProvider();
+        public ISubscriptionListDataProvider GetSubscriptionListDataProvider() {
+            return new SubscriptionListDemoDataProvider();
+        }
+
+        public IReportDetailsDataProvider GetReportDetailsDataProvider() {
+            return new ReportDetailsDemoDataProvider();
+        }
+
+        public IReportRepository GetReportListDataProvider() {
+            return new ReportDemoRepository();
+        }
+
+        public IStatisticsDataProvider GetStatisticsDataProvider() {
+            return new StatisticsDemoDataProvider();
+        }
     }
 }

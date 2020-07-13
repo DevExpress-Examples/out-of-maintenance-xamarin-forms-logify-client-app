@@ -38,7 +38,7 @@
 using Logify.Mobile.Models;
 using Newtonsoft.Json.Linq;
 
-namespace Logify.Mobile.ViewModels.ReportDetail {
+namespace Logify.Mobile.ViewModels.ReportDetails {
     public class StackedReportDetailInfoContainer : ScrolledContentDetailInfoContainer {
         public List<ExceptionInfoModel> Values { get; private set; }
         public override CardType CardType => CardType.Stacked;

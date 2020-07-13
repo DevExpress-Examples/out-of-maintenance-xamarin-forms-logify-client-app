@@ -66,25 +66,25 @@ namespace Logify.Mobile.iOS {
             base.OnElementChanged(e);
             ExtendedPicker picker = Element as ExtendedPicker;
             if (picker != null) {
-                positiveButtonText = picker.PositiveButtonText;
-                positiveButtonColor = picker.PositiveButtonColor;
-                negativeButtonText = picker.NegativeButtonText;
-                negativeButtonColor = picker.NegativeButtonColor;
+                this.positiveButtonText = picker.PositiveButtonText;
+                this.positiveButtonColor = picker.PositiveButtonColor;
+                this.negativeButtonText = picker.NegativeButtonText;
+                this.negativeButtonColor = picker.NegativeButtonColor;
             }
             if (Control != null) {
                 Control.BorderStyle = UITextBorderStyle.None;
                 
                 UIToolbar toolbar = (UIToolbar)Control.InputAccessoryView;
-                UIBarButtonItem done = new UIBarButtonItem(positiveButtonText, UIBarButtonItemStyle.Done, (object sender, EventArgs click) => {});
+                UIBarButtonItem done = new UIBarButtonItem(this.positiveButtonText, UIBarButtonItemStyle.Done, (object sender, EventArgs click) => {});
                 foreach(UIBarButtonItem button in toolbar.Items) {
                     if (button.Style == UIBarButtonItemStyle.Done)
                         done.Target = button.Target;
                 }
-                done.TintColor = positiveButtonColor.ToUIColor();
-                UIBarButtonItem cancel = new UIBarButtonItem(negativeButtonText, UIBarButtonItemStyle.Done, (object sender, EventArgs click) => {
+                done.TintColor = this.positiveButtonColor.ToUIColor();
+                UIBarButtonItem cancel = new UIBarButtonItem(this.negativeButtonText, UIBarButtonItemStyle.Done, (object sender, EventArgs click) => {
                     picker.Unfocus();
                 });
-                cancel.TintColor = negativeButtonColor.ToUIColor();
+                cancel.TintColor = this.negativeButtonColor.ToUIColor();
                 UIBarButtonItem empty = new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace, null);
                 toolbar.Items = new UIBarButtonItem[] { cancel, empty, done };
             }
@@ -92,16 +92,16 @@ namespace Logify.Mobile.iOS {
         protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e) {
             base.OnElementPropertyChanged(sender, e);
             if (e.PropertyName == nameof(ExtendedPicker.PositiveButtonText)) {
-                positiveButtonText = ((ExtendedPicker)Element).PositiveButtonText;
+                this.positiveButtonText = ((ExtendedPicker)Element).PositiveButtonText;
             }
             if (e.PropertyName == nameof(ExtendedPicker.PositiveButtonColor)) {
-                positiveButtonColor = ((ExtendedPicker)Element).PositiveButtonColor;
+                this.positiveButtonColor = ((ExtendedPicker)Element).PositiveButtonColor;
             }
             if (e.PropertyName == nameof(ExtendedPicker.PositiveButtonText)) {
-                negativeButtonText = ((ExtendedPicker)Element).NegativeButtonText;
+                this.negativeButtonText = ((ExtendedPicker)Element).NegativeButtonText;
             }
             if (e.PropertyName == nameof(ExtendedPicker.PositiveButtonColor)) {
-                negativeButtonColor = ((ExtendedPicker)Element).NegativeButtonColor;
+                this.negativeButtonColor = ((ExtendedPicker)Element).NegativeButtonColor;
             }
             if (e.PropertyName == nameof(ExtendedPicker.Show)) {
                 Element.Focus();

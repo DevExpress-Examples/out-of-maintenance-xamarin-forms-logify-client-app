@@ -89,9 +89,7 @@
     <ImageAsset Include="Assets.xcassets\Back.imageset\Back.pdf" />
     <ImageAsset Include="Assets.xcassets\apps.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\reports.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\statistic.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\user.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\statistic.imageset\Statistic.pdf" />
     <ImageAsset Include="Assets.xcassets\user.imageset\user.pdf" />
     <ImageAsset Include="Assets.xcassets\reports.imageset\reports.pdf" />
     <ImageAsset Include="Assets.xcassets\apps.imageset\apps.pdf" />
@@ -117,6 +115,8 @@
     <ImageAsset Include="Assets.xcassets\calendar.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\logify_bottom.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\logify_bottom.imageset\logifytext.pdf" />
+    <ImageAsset Include="Assets.xcassets\statistics.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\statistics.imageset\Statistics.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -127,10 +127,10 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.XamarinForms.Charts" Version="20.1.4" />
-    <PackageReference Include="DevExpress.XamarinForms.Grid" Version="20.1.4" />
-    <PackageReference Include="DevExpress.XamarinForms.DemoEditors" Version="20.1.4" />
-    <PackageReference Include="DevExpress.XamarinForms.Navigation" Version="20.1.4" />
+    <PackageReference Include="DevExpress.XamarinForms.Charts" Version="20.1.5" />
+    <PackageReference Include="DevExpress.XamarinForms.Grid" Version="20.1.5" />
+    <PackageReference Include="DevExpress.XamarinForms.DemoEditors" Version="20.1.5" />
+    <PackageReference Include="DevExpress.XamarinForms.Navigation" Version="20.1.5" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.4.0.991640" />
   </ItemGroup>
@@ -164,10 +164,10 @@
     <Folder Include="Assets.xcassets\Back.imageset\" />
     <Folder Include="Assets.xcassets\apps.imageset\" />
     <Folder Include="Assets.xcassets\reports.imageset\" />
-    <Folder Include="Assets.xcassets\statistic.imageset\" />
     <Folder Include="Assets.xcassets\user.imageset\" />
     <Folder Include="Assets.xcassets\calendar.imageset\" />
     <Folder Include="Assets.xcassets\logify-text.imageset\" />
     <Folder Include="Assets.xcassets\logify_bottom.imageset\" />
+    <Folder Include="Assets.xcassets\statistics.imageset\" />
   </ItemGroup>
 </Project>

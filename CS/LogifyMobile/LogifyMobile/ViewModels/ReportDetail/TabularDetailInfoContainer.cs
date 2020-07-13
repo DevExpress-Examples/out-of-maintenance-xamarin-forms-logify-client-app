@@ -37,15 +37,15 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Logify.Mobile.Models;
-using Logify.Mobile.Services.ReportDetail;
+using Logify.Mobile.Services.ReportDetails;
 using Newtonsoft.Json.Linq;
 
-namespace Logify.Mobile.ViewModels.ReportDetail {
+namespace Logify.Mobile.ViewModels.ReportDetails {
     public class TabularDetailInfoContainer: ReportDetailInfoContainerBase {
         readonly List<TabularCard> cards = new List<TabularCard>() { };
         string refURL = string.Empty;
         bool cardsLoaded = false;
-        IReportDetailDataProvider provider = null;
+        IReportDetailsDataProvider provider = null;
 
         public CardValueType CardValueType { get; }
         public override CardType CardType => CardType.Tabular;
@@ -53,7 +53,7 @@ namespace Logify.Mobile.ViewModels.ReportDetail {
             get { return cards; }
         }
 
-        public TabularDetailInfoContainer(ExceptionReportCard card, IReportDetailDataProvider provider) {
+        public TabularDetailInfoContainer(ExceptionReportCard card, IReportDetailsDataProvider provider) {
             CardValueType = card.CardValueType;
             if (!card.Referrer) {
                 ProcessValues(card.Values);

@@ -198,70 +198,70 @@ namespace Logify.Mobile.Controls {
 
         public PickerView() {
             InitializeComponent();
-            picker.On<iOS>().SetUpdateMode(UpdateMode.WhenFinished);
+            this.picker.On<iOS>().SetUpdateMode(UpdateMode.WhenFinished);
         }
         void SetItemsSource(IList itemSource) {
-            picker.ItemsSource = itemSource;
-            IsEnabled = icon.IsVisible = itemSource != null ? (itemSource?.Count > 1) : false;
+            this.picker.ItemsSource = itemSource;
+            IsEnabled = this.icon.IsVisible = itemSource != null ? (itemSource?.Count > 1) : false;
             
         }
         void SetSelectedIndex(int index) {
-            picker.SelectedIndex = index;
+            this.picker.SelectedIndex = index;
         }
         void SetSelectedItem(object item) {
-            if (picker.SelectedItem != item) {
-				if (picker.SelectedItem is PickerViewItem oldItem)
+            if (this.picker.SelectedItem != item) {
+				if (this.picker.SelectedItem is PickerViewItem oldItem)
 					oldItem.Selected = false;
 				if (item is PickerViewItem newItem)
 					newItem.Selected = true;
-				picker.SelectedItem = item;
+                this.picker.SelectedItem = item;
                 SetItemTextColor(item);
 			}
 		}
         void SetItemTextColor(object item) {
             if (item is PickerViewItem pickerViewItem && PlaceholderColor.Equals(Color.Default)) {
-                picker.TextColor = pickerViewItem.TextColor;
+                this.picker.TextColor = pickerViewItem.TextColor;
             }
         }
         void SetFontFamily(string font) {
-            picker.FontFamily = font;
+            this.picker.FontFamily = font;
         }
         void SetFontAttributes(FontAttributes fontAttributes) {
-            picker.FontAttributes = fontAttributes;
+            this.picker.FontAttributes = fontAttributes;
         }
         void SetFontSize(double fontSize) {
-            picker.FontSize = fontSize;
+            this.picker.FontSize = fontSize;
         }
         void SetTitle(string title) {
-            picker.Title = title;
+            this.picker.Title = title;
         }
         void SetTitleColor(Color titleColor) {
-            picker.TitleColor = titleColor;
+            this.picker.TitleColor = titleColor;
         }
         void SetPositiveButtonText(string positiveButtonText) {
-            picker.PositiveButtonText = positiveButtonText;
+            this.picker.PositiveButtonText = positiveButtonText;
         }
         void SetPositiveButtonColor(Color positiveButtonColor) {
-            picker.PositiveButtonColor = positiveButtonColor;
+            this.picker.PositiveButtonColor = positiveButtonColor;
         }
         void SetNegativeButtonText(string negativeButtonText) {
-            picker.NegativeButtonText = negativeButtonText;
+            this.picker.NegativeButtonText = negativeButtonText;
         }
         void SetNegativeButtonColor(Color negativeButtonColor) {
-            picker.NegativeButtonColor = negativeButtonColor;
+            this.picker.NegativeButtonColor = negativeButtonColor;
         }
         void Picker_SelectedIndexChanged(object sender, EventArgs e) {
-            SetItemTextColor(picker.SelectedItem);
-            SelectedItem = picker.SelectedItem;
-            SelectedIndex = picker.SelectedIndex;
+            SetItemTextColor(this.picker.SelectedItem);
+            SelectedItem = this.picker.SelectedItem;
+            SelectedIndex = this.picker.SelectedIndex;
             SelectedIndexChanged?.Invoke(this, e);
             SelectedItemChangeCommand?.Execute(this);
         }
         void PickerView_Tapped(object sender, EventArgs e) {
-            picker.ShowDialog();
+            this.picker.ShowDialog();
         }
         public void UnfocusPicker() {
-            picker.Unfocus();
+            this.picker.Unfocus();
         }
     }
 }

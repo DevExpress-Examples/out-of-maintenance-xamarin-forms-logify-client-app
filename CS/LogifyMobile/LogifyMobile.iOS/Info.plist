@@ -9,9 +9,9 @@
 	<key>CFBundleName</key>
 	<string>Logify</string>
 	<key>CFBundleShortVersionString</key>
-	<string>20.1.3</string>
+	<string>20.1.5</string>
 	<key>CFBundleVersion</key>
-	<string>20.1.3</string>
+	<string>20.1.5</string>
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
 	<key>NSAppTransportSecurity</key>

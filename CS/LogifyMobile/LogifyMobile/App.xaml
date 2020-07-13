@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:templates="clr-namespace:Logify.Mobile.Views.ReportDetailTemplates"
+             xmlns:templates="clr-namespace:Logify.Mobile.Views.ReportDetailsTemplates"
              xmlns:converters="clr-namespace:Logify.Mobile.Services.Converters"
              mc:Ignorable="d"
              x:Class="Logify.Mobile.App">
@@ -16,7 +16,7 @@
         <ResourceDictionary>
             <converters:InvertedBoolConverter x:Key="invertedBoolConverter"/>
             <ResourceDictionary.MergedDictionaries>
-                <templates:ReportsDetailCardsTemplates/>
+                <templates:ReportDetailsCardTemplates/>
                 <templates:CardStyles/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

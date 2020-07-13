@@ -37,7 +37,7 @@
 ﻿using System;
 using Logify.Mobile.Models;
 
-namespace Logify.Mobile.ViewModels.ReportDetail {
+namespace Logify.Mobile.ViewModels.ReportDetails {
     public class ExceptionInfoModel: ExceptionInfo {
         public string StackText { get; set; }
         public ExceptionInfoModel(ExceptionInfo exception) {

@@ -44,9 +44,9 @@ using Xamarin.Forms;
 namespace Logify.Mobile.ViewModels {
     public class ReportViewModel : NotificationObject {
         public Report Report { get; private set; }
-        IReportsRepository reportsRepository;
+        IReportRepository reportsRepository;
 
-        public ReportViewModel(Report report, IReportsRepository reportsRepository) {
+        public ReportViewModel(Report report, IReportRepository reportsRepository) {
             Report = report;
             this.reportsRepository = reportsRepository;
         }

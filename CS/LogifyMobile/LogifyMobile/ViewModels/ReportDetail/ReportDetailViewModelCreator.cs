@@ -37,14 +37,13 @@
 ﻿using System.Threading.Tasks;
 using Logify.Mobile.Models;
 using Logify.Mobile.Services;
-using Logify.Mobile.Services.ReportDetail;
+using Logify.Mobile.Services.ReportDetails;
 
-namespace Logify.Mobile.ViewModels.ReportDetail {
-    public class ReportDetailViewModelCreator {
-        string reportHeader = string.Empty;
-        public async Task<ReportDetailViewModel> CreateModel(ReportViewModel reportViewModel) {
-            IReportDetailDataProvider provider = DataProviderFactory.CreateReportDetailDataProvider();
-            ReportDetailViewModel model = new ReportDetailViewModel(reportViewModel, provider);
+namespace Logify.Mobile.ViewModels.ReportDetails {
+    public class ReportDetailsViewModelCreator {
+        public async Task<ReportDetailsViewModel> CreateModel(ReportViewModel reportViewModel) {
+            IReportDetailsDataProvider provider = DataProviderFactory.CreateReportDetailsDataProvider();
+            ReportDetailsViewModel model = new ReportDetailsViewModel(reportViewModel, provider);
             ExceptionReport exceptionReport = await provider.LoadReport(reportViewModel.Report.ApiKey, reportViewModel.Report.ReportId);
             foreach (ExceptionReportCard card in exceptionReport.Cards) {
                 ReportDetailInfoContainerBase container = CreateContainer(card, provider, reportViewModel.Report);
@@ -54,7 +53,7 @@ namespace Logify.Mobile.ViewModels.ReportDetail {
             model.Cards[0].IsSelected = true;
             return model;
         }
-        ReportDetailInfoContainerBase CreateContainer(ExceptionReportCard card, IReportDetailDataProvider provider, Report report) {
+        ReportDetailInfoContainerBase CreateContainer(ExceptionReportCard card, IReportDetailsDataProvider provider, Report report) {
             ReportDetailInfoContainerBase container = null;
             switch (card.Type) {
                 case CardType.KeyValue:

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:dxg="clr-namespace:DevExpress.XamarinForms.DataGrid;assembly=DevExpress.XamarinForms.Grid"
+    xmlns:vm="clr-namespace:Logify.Mobile.ViewModels"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="true"
+    x:Class="Logify.Mobile.Views.ReportListView"
+    BackgroundColor="{DynamicResource BackgroundThemeColor}"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:editors="clr-namespace:DevExpress.XamarinForms.DemoEditors;assembly=DevExpress.XamarinForms.DemoEditors"
+    xmlns:views="clr-namespace:Logify.Mobile.Views"
+    x:DataType="vm:ReportListViewModel"
+    Padding="0">    
+    <ContentPage.BindingContext>
+        <vm:ReportListViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="dxg:CellStyle">
+                <Setter Property="HorizontalLineThickness" Value="0"/>
+                <Setter Property="BorderColor" Value="Transparent"/>
+                <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundThemeColor}"/>
+                <Setter Property="SelectionColor" Value="{DynamicResource BackgroundThemeColor}"/>
+            </Style>
+            
+            <Style TargetType="dxg:DataGridView">
+                <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundThemeColor}"/>
+            </Style>
+            
+            <DataTemplate x:Key="SwipeItemIgnoreTemplate">
+                <StackLayout Margin="0,8,1,7.5" BackgroundColor="{DynamicResource ReportStatusIgnoredOnce}">
+                    <editors:IconView ImageSource="Ignore.svg" ForegroundColor="{DynamicResource SwipeItemForegroundColor}"
+                                       VerticalOptions="EndAndExpand" HorizontalOptions="Center" WidthRequest="24" HeightRequest="24"/>
+                    <Label Text="Ignore" Style="{StaticResource GridCellMainText}" TextColor="{DynamicResource SwipeItemForegroundColor}"
+                           VerticalOptions="StartAndExpand" HorizontalOptions="Center" Margin="0,8,0,0"/>
+                </StackLayout>
+            </DataTemplate>
+            
+            <DataTemplate x:Key="SwipeItemCloseTemplate">
+                <StackLayout Margin="0,8,0,7.5" BackgroundColor="{DynamicResource ReportStatusClosedOnce}">
+                    <editors:IconView ImageSource="Close.svg" ForegroundColor="{DynamicResource SwipeItemForegroundColor}"
+                                       VerticalOptions="EndAndExpand" HorizontalOptions="Center" WidthRequest="24" HeightRequest="24"/>
+                    <Label Text="Close" Style="{StaticResource GridCellMainText}" TextColor="{DynamicResource SwipeItemForegroundColor}"
+                           VerticalOptions="StartAndExpand" HorizontalOptions="Center" Margin="0,8,0,0"/>
+                </StackLayout>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <AbsoluteLayout>
+        <dxg:DataGridView
+            Margin="16,0" BorderThickness="0" FullSwipeMode="None" IsVerticalScrollBarVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"
+            ItemsSource="{Binding Reports}" x:Name="grid" IsUpdateLocked="{Binding IsUpdateLocked}" SelectionMode="None"
+            IsLoadMoreEnabled="{Binding IsLoadMoreEnabled}" LoadMoreCommand="{Binding LoadMoreCommand}" Tap="Handle_Tap"
+            IsPullToRefreshEnabled="true" PullToRefreshCommand="{Binding RefreshCommand}"
+            IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}" IsColumnHeaderVisible="False"
+            IndicatorColor="{DynamicResource CardHeaderColor}"
+            AllowCascadeTreeCreation="True">
+            <dxg:DataGridView.EndSwipeItems>
+                <dxg:SwipeItem Template="{StaticResource SwipeItemIgnoreTemplate}" Width="80" Command="{Binding IgnoreCommand}" BackgroundColor="{DynamicResource BackgroundThemeColor}" />
+                <dxg:SwipeItem Template="{StaticResource SwipeItemCloseTemplate}" Width="80" Command="{Binding CloseCommand}" BackgroundColor="{DynamicResource BackgroundThemeColor}" />
+            </dxg:DataGridView.EndSwipeItems>
+
+            <dxg:DataGridView.Columns>
+                <dxg:TemplateColumn IsReadOnly="true" AllowSort="False">
+                    <dxg:TemplateColumn.DisplayTemplate>
+                        <DataTemplate x:DataType="dxg:CellData">
+                            <ContentView CompressedLayout.IsHeadless="True">
+                                <views:ReportListItem BindingContext="{Binding Item}"/>
+                            </ContentView>
+                        </DataTemplate>
+                    </dxg:TemplateColumn.DisplayTemplate>
+                </dxg:TemplateColumn>
+            </dxg:DataGridView.Columns>
+        </dxg:DataGridView>
+
+        <Label Text="No Reports Found" FontSize="{DynamicResource TitleFontSize}" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="{Binding HasReports}"
+               AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5"/>
+    </AbsoluteLayout>
+
+</ContentPage>

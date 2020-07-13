@@ -36,17 +36,17 @@
 */
 ﻿using System.Windows.Input;
 using Logify.Mobile.Models;
-using Logify.Mobile.Services.ReportDetail;
+using Logify.Mobile.Services.ReportDetails;
 using Xamarin.Forms;
 
-namespace Logify.Mobile.ViewModels.ReportDetail {
+namespace Logify.Mobile.ViewModels.ReportDetails {
     public class CommentsDetailInfoContainer : ReportDetailInfoContainerBase {
         public override CardType CardType => CardType.Comments;
         public string Comments { get; set; }
 
         public ICommand SaveCommentsCommand { get; private set; }
 
-        public CommentsDetailInfoContainer(object value, IReportDetailDataProvider provider, Report report): base() {
+        public CommentsDetailInfoContainer(object value, IReportDetailsDataProvider provider, Report report): base() {
             if (value == null)
                 value = string.Empty;
             Comments = value.ToString();

@@ -49,7 +49,7 @@ using Xamarin.Forms.Platform.Android;
 [assembly: ExportRenderer(typeof(ExtendedPicker), typeof(PickerViewRenderer))]
 namespace Logify.Mobile.Droid {
     public class PickerViewRenderer : PickerRenderer {
-        AlertDialog _dialog;
+        AlertDialog dialog;
         string positiveButtonText = "OK";
         Color positiveButtonColor = Color.Default;
         string negativeButtonText = "Cancel";
@@ -65,10 +65,10 @@ namespace Logify.Mobile.Droid {
                 return;
             Control.SetPadding(0, 0, 0, 0);
             if (Element is ExtendedPicker picker) {
-                positiveButtonText = picker.PositiveButtonText;
-                positiveButtonColor = picker.PositiveButtonColor;
-                negativeButtonText = picker.NegativeButtonText;
-                negativeButtonColor = picker.NegativeButtonColor;
+                this.positiveButtonText = picker.PositiveButtonText;
+                this.positiveButtonColor = picker.PositiveButtonColor;
+                this.negativeButtonText = picker.NegativeButtonText;
+                this.negativeButtonColor = picker.NegativeButtonColor;
             }
             Control.Background = new ColorDrawable(Element.BackgroundColor.ToAndroid());
             Control.Click += Control_Click;
@@ -80,16 +80,16 @@ namespace Logify.Mobile.Droid {
                 Control.Background = new ColorDrawable(Element.BackgroundColor.ToAndroid());
             }
             if (e.PropertyName == nameof(ExtendedPicker.PositiveButtonText)) {
-                positiveButtonText = ((ExtendedPicker)Element).PositiveButtonText;
+                this.positiveButtonText = ((ExtendedPicker)Element).PositiveButtonText;
             }
             if (e.PropertyName == nameof(ExtendedPicker.PositiveButtonColor)) {
-                positiveButtonColor = ((ExtendedPicker)Element).PositiveButtonColor;
+                this.positiveButtonColor = ((ExtendedPicker)Element).PositiveButtonColor;
             }
             if (e.PropertyName == nameof(ExtendedPicker.PositiveButtonText)) {
-                negativeButtonText = ((ExtendedPicker)Element).NegativeButtonText;
+                this.negativeButtonText = ((ExtendedPicker)Element).NegativeButtonText;
             }
             if (e.PropertyName == nameof(ExtendedPicker.PositiveButtonColor)) {
-                negativeButtonColor = ((ExtendedPicker)Element).NegativeButtonColor;
+                this.negativeButtonColor = ((ExtendedPicker)Element).NegativeButtonColor;
             }
             if (e.PropertyName == nameof(ExtendedPicker.Show)) {
                 Control_Click(sender, e);
@@ -117,8 +117,8 @@ namespace Logify.Mobile.Droid {
             var builder = new AlertDialog.Builder(Context);
             builder.SetView(layout);
             builder.SetTitle(model.Title ?? "");
-            builder.SetNegativeButton(negativeButtonText, (s, a) => { });
-            builder.SetPositiveButton(positiveButtonText, (s, a) => {
+            builder.SetNegativeButton(this.negativeButtonText, (s, a) => { });
+            builder.SetPositiveButton(this.positiveButtonText, (s, a) => {
                 ElementController?.SetValueFromRenderer(Picker.SelectedIndexProperty, picker.Value);
                 if (Element != null) {
                     if (model.Items.Count > 0 && Element.SelectedIndex >= 0)
@@ -126,15 +126,15 @@ namespace Logify.Mobile.Droid {
                     ElementController?.SetValueFromRenderer(VisualElement.IsFocusedProperty, false);
                 }
             });
-            _dialog = builder.Create();
-            _dialog.DismissEvent += (ssender, args) => {
+            this.dialog = builder.Create();
+            this.dialog.DismissEvent += (ssender, args) => {
                 ElementController?.SetValueFromRenderer(VisualElement.IsFocusedProperty, false);
             };
-            _dialog.Show();
-            Android.Widget.Button btnOk = _dialog.GetButton((int)DialogButtonType.Positive);
-            btnOk.SetTextColor(positiveButtonColor.ToAndroid());
-            Android.Widget.Button btnCancel = _dialog.GetButton((int)DialogButtonType.Negative);
-            btnCancel.SetTextColor(negativeButtonColor.ToAndroid());
+            this.dialog.Show();
+            Android.Widget.Button btnOk = this.dialog.GetButton((int)DialogButtonType.Positive);
+            btnOk.SetTextColor(this.positiveButtonColor.ToAndroid());
+            Android.Widget.Button btnCancel = this.dialog.GetButton((int)DialogButtonType.Negative);
+            btnCancel.SetTextColor(this.negativeButtonColor.ToAndroid());
 
         }
     }    

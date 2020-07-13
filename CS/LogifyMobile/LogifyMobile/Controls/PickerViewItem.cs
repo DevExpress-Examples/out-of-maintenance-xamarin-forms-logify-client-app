@@ -47,8 +47,8 @@ namespace Logify.Mobile.Controls {
         public string Text { get; set; }
         public object Value { get; set; }
         public bool Selected {
-            get => selected;
-            set => SetProperty(ref selected, value);
+            get => this.selected;
+            set => SetProperty(ref this.selected, value);
         }
 
         public PickerViewItem() {

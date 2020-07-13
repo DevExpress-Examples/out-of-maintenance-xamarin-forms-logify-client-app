@@ -34,7 +34,7 @@
 {                                                                   }
 {*******************************************************************}
 */
-﻿namespace Logify.Mobile.ViewModels.ReportDetail {
+﻿namespace Logify.Mobile.ViewModels.ReportDetails {
     public class KeyValueProperty {
         public string Key { get; }
         public string Value { get; }

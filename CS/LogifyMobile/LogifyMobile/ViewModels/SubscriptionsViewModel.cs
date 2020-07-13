@@ -49,7 +49,7 @@ namespace Logify.Mobile.ViewModels {
             set => settings.SubscriptionId = value;
         }
 
-        protected override Task<IDictionary<string, string>> LoadItems() => DataProviderFactory.CreateSubscriptionsDataProvider().GetSubscriptions();
+        protected override Task<IDictionary<string, string>> LoadItems() => DataProviderFactory.CreateSubscriptionListDataProvider().GetSubscriptions();
 
         protected override Task OnItemsUpdated() {
             return TeamsViewModel.Instance.UpdateItemsAsync();
