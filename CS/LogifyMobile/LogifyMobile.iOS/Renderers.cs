@@ -85,7 +85,7 @@ namespace Logify.Mobile.iOS {
                     picker.Unfocus();
                 });
                 cancel.TintColor = this.negativeButtonColor.ToUIColor();
-                UIBarButtonItem empty = new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace, null);
+                UIBarButtonItem empty = new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace);
                 toolbar.Items = new UIBarButtonItem[] { cancel, empty, done };
             }
         }
