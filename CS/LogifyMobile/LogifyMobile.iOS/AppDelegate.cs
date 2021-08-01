@@ -47,7 +47,7 @@ namespace Logify.Mobile.iOS {
             DevExpress.XamarinForms.DemoEditors.Editors.Init();
             global::Xamarin.Forms.Forms.Init();
             global::Xamarin.Auth.Presenters.XamarinIOS.AuthenticationConfiguration.Init();
-            
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

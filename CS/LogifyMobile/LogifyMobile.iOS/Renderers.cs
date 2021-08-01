@@ -46,7 +46,13 @@ using Xamarin.Forms.Platform.iOS;
 [assembly: ExportRenderer(typeof(ExtendedPicker), typeof(PickerViewRenderer))]
 
 namespace Logify.Mobile.iOS {
+    /// <summary>
+    /// 
+    /// </summary>
     public class ExtNavigationRenderer : NavigationRenderer {
+        /// <summary>
+        /// 
+        /// </summary>
         public override void ViewDidLoad() {
             base.ViewDidLoad();
             NavigationBar.SetBackgroundImage(new UIImage(), UIBarMetrics.Default);
@@ -55,12 +61,18 @@ namespace Logify.Mobile.iOS {
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class PickerViewRenderer : PickerRenderer {
         string positiveButtonText = "OK";
         Color positiveButtonColor = Color.Default;
         string negativeButtonText = "Cancel";
         Color negativeButtonColor = Color.Default;
 
+        /// <summary>
+        /// 
+        /// </summary>
         public PickerViewRenderer() { }
         protected override void OnElementChanged(ElementChangedEventArgs<Picker> e) {
             base.OnElementChanged(e);
@@ -89,6 +101,11 @@ namespace Logify.Mobile.iOS {
                 toolbar.Items = new UIBarButtonItem[] { cancel, empty, done };
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e) {
             base.OnElementPropertyChanged(sender, e);
             if (e.PropertyName == nameof(ExtendedPicker.PositiveButtonText)) {
